@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { cn } from "@/lib/cn";
 import { ROUTES } from "@/lib/constants";
+import { ButtonLink } from "@/components/ui/Button";
 
 export function Header() {
   const pathname = usePathname();
@@ -46,7 +47,7 @@ export function Header() {
       )}
     >
       <div className="container-prose">
-        <div className="flex h-16 sm:h-20 items-center justify-between gap-6">
+        <div className="flex h-16 sm:h-20 items-center justify-between gap-3 min-w-0">
           <Link
             href="/"
             aria-label="SparkLab home"
@@ -68,7 +69,7 @@ export function Header() {
 
           <nav
             aria-label="Primary"
-            className="hidden lg:flex items-center gap-1"
+            className="hidden lg:flex items-center gap-0.5 min-w-0"
           >
             {ROUTES.map((item) =>
               "children" in item ? (
@@ -140,7 +141,7 @@ export function Header() {
             )}
           </nav>
 
-          <div className="hidden lg:flex items-center gap-1">
+          <div className="hidden lg:flex shrink-0 items-center gap-2">
             <DonateTab active={isActive("/donate")} />
             <Link
               href="/contact"
@@ -155,7 +156,7 @@ export function Header() {
             </Link>
           </div>
 
-          <div className="flex items-center gap-1 lg:hidden">
+          <div className="flex shrink-0 items-center gap-2 lg:hidden">
             <DonateTab active={isActive("/donate")} />
             <button
               type="button"
@@ -223,17 +224,13 @@ export function Header() {
                 </Link>
               )
             )}
-            <Link
+            <ButtonLink
               href="/donate"
-              className={cn(
-                "mt-4 px-3 py-3 rounded-lg font-medium transition-colors",
-                isActive("/donate")
-                  ? "text-[color:var(--color-spark)] bg-white/5"
-                  : "text-[color:var(--color-fg)] hover:bg-white/5"
-              )}
+              variant="outline"
+              className="mt-4 w-full border-[color:var(--color-spark)] text-[color:var(--color-spark)] hover:bg-[color:var(--color-spark)] hover:text-white"
             >
               Donate
-            </Link>
+            </ButtonLink>
             <Link
               href="/contact"
               className="mt-2 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-[color:var(--color-spark)] text-white font-semibold"
@@ -249,17 +246,16 @@ export function Header() {
 
 function DonateTab({ active }: { active: boolean }) {
   return (
-    <Link
+    <ButtonLink
       href="/donate"
+      variant="outline"
       className={cn(
-        "px-3 py-2 text-sm font-medium rounded-md transition-colors",
-        active
-          ? "text-[color:var(--color-spark)]"
-          : "text-[color:var(--color-fg-muted)] hover:text-[color:var(--color-fg)]"
+        "border-[color:var(--color-spark)] text-[color:var(--color-spark)] hover:bg-[color:var(--color-spark)] hover:text-white",
+        active && "bg-[color:var(--color-spark)] text-white"
       )}
       aria-current={active ? "page" : undefined}
     >
       Donate
-    </Link>
+    </ButtonLink>
   );
 }
