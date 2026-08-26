@@ -20,3 +20,5 @@ services:
         value: mljereqq
       - key: NEXT_PUBLIC_FORMSPREE_NEWSLETTER_ID
         sync: false
+      - key: NEXT_PUBLIC_GIVEBUTTER_URL
+        value: https://givebutter.com/sparklab-donations-4aerwi

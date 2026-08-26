@@ -109,6 +109,7 @@ Required env vars in production:
 | `NEXT_PUBLIC_SITE_URL` | Canonical origin used by sitemap.xml, OG, JSON-LD. e.g. `https://sparklabusa.com` |
 | `NEXT_PUBLIC_FORMSPREE_CONTACT_ID` | Formspree form ID for the contact form |
 | `NEXT_PUBLIC_FORMSPREE_NEWSLETTER_ID` | Formspree form ID for the newsletter |
+| `NEXT_PUBLIC_GIVEBUTTER_URL` | Live Givebutter campaign URL for individual donations |
 
 ## Refreshing photos
 

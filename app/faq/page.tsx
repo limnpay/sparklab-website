@@ -1,4 +1,4 @@
-import { ArrowRight, GraduationCap, School, Heart, Briefcase, type LucideIcon } from "lucide-react";
+import { ArrowRight, GraduationCap, School, Heart, Briefcase, Gift, type LucideIcon } from "lucide-react";
 import { buildMetadata } from "@/lib/seo";
 import { ButtonLink } from "@/components/ui/Button";
 import { Section } from "@/components/ui/Section";
@@ -9,7 +9,7 @@ import { FAQ_CATEGORIES } from "@/lib/faq";
 export const metadata = buildMetadata({
   title: "FAQ — Common Questions about SparkLab",
   description:
-    "Answers to common questions about SparkLab from students, parents, teachers, schools, mentors, and judges. Time commitment, prizes, costs, and how to get involved.",
+    "Answers to common questions about SparkLab from students, parents, teachers, schools, mentors, judges, and donors. Time commitment, prizes, costs, giving, and how to get involved.",
   path: "/faq",
   keywords: [
     "SparkLab FAQ",
@@ -25,6 +25,7 @@ const ICONS: Record<string, LucideIcon> = {
   schools: School,
   parents: Heart,
   mentors: Briefcase,
+  giving: Gift,
 };
 
 export default function FaqPage() {

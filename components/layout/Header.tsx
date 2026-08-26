@@ -140,7 +140,8 @@ export function Header() {
             )}
           </nav>
 
-          <div className="hidden lg:block">
+          <div className="hidden lg:flex items-center gap-1">
+            <DonateTab active={isActive("/donate")} />
             <Link
               href="/contact"
               data-cursor="cta"
@@ -154,19 +155,22 @@ export function Header() {
             </Link>
           </div>
 
-          <button
-            type="button"
-            className="lg:hidden p-2 rounded-md text-[color:var(--color-fg)]"
-            aria-label={isOpen ? "Close menu" : "Open menu"}
-            aria-expanded={isOpen}
-            onClick={() => setIsOpen((v) => !v)}
-          >
-            {isOpen ? (
-              <X className="h-6 w-6" />
-            ) : (
-              <Menu className="h-6 w-6" />
-            )}
-          </button>
+          <div className="flex items-center gap-1 lg:hidden">
+            <DonateTab active={isActive("/donate")} />
+            <button
+              type="button"
+              className="p-2 rounded-md text-[color:var(--color-fg)]"
+              aria-label={isOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isOpen}
+              onClick={() => setIsOpen((v) => !v)}
+            >
+              {isOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -220,8 +224,19 @@ export function Header() {
               )
             )}
             <Link
+              href="/donate"
+              className={cn(
+                "mt-4 px-3 py-3 rounded-lg font-medium transition-colors",
+                isActive("/donate")
+                  ? "text-[color:var(--color-spark)] bg-white/5"
+                  : "text-[color:var(--color-fg)] hover:bg-white/5"
+              )}
+            >
+              Donate
+            </Link>
+            <Link
               href="/contact"
-              className="mt-4 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-[color:var(--color-spark)] text-white font-semibold"
+              className="mt-2 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-[color:var(--color-spark)] text-white font-semibold"
             >
               Get Started
             </Link>
@@ -229,5 +244,22 @@ export function Header() {
         </nav>
       )}
     </header>
+  );
+}
+
+function DonateTab({ active }: { active: boolean }) {
+  return (
+    <Link
+      href="/donate"
+      className={cn(
+        "px-3 py-2 text-sm font-medium rounded-md transition-colors",
+        active
+          ? "text-[color:var(--color-spark)]"
+          : "text-[color:var(--color-fg-muted)] hover:text-[color:var(--color-fg)]"
+      )}
+      aria-current={active ? "page" : undefined}
+    >
+      Donate
+    </Link>
   );
 }

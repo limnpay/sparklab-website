@@ -17,6 +17,7 @@ const INVOLVE_LINKS = [
   { href: "/students", label: "For Students" },
   { href: "/schools", label: "For Schools" },
   { href: "/mentors", label: "For Mentors & Judges" },
+  { href: "/donate", label: "Donate" },
   { href: "/contact", label: "Contact Us" },
 ];
 

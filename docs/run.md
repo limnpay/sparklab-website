@@ -52,9 +52,12 @@ NEXT_PUBLIC_SITE_URL=http://localhost:3000
 # Get them at https://formspree.io after creating one form for each.
 NEXT_PUBLIC_FORMSPREE_CONTACT_ID=mljereqq
 NEXT_PUBLIC_FORMSPREE_NEWSLETTER_ID=xxxxxxxx
+
+# Givebutter campaign URL (public). Individual Donate CTAs use this.
+NEXT_PUBLIC_GIVEBUTTER_URL=https://givebutter.com/sparklab-donations-4aerwi
 ```
 
-For production, only `NEXT_PUBLIC_SITE_URL` and the two Formspree IDs need to be set.
+For production, set `NEXT_PUBLIC_SITE_URL`, the two Formspree IDs, and `NEXT_PUBLIC_GIVEBUTTER_URL`.
 
 ## Verifying the SEO setup
 

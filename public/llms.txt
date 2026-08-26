@@ -43,5 +43,6 @@ Key facts:
 ## About
 
 - [About SparkLab](https://sparklabusa.com/about): the program's mission and origin as a collaborative initiative between SIGU and KMI
-- [FAQ](https://sparklabusa.com/faq): common questions from students, teachers, parents, mentors, and judges
+- [Donate](https://sparklabusa.com/donate): individual gifts via Givebutter; corporate sponsorships start on the Contact page
+- [FAQ](https://sparklabusa.com/faq): common questions from students, teachers, parents, mentors, judges, and donors
 - [Contact](https://sparklabusa.com/contact): contact form and newsletter signup

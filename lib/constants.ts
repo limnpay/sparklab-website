@@ -47,6 +47,15 @@ export const FORMSPREE = {
   newsletterId: process.env.NEXT_PUBLIC_FORMSPREE_NEWSLETTER_ID ?? "",
 } as const;
 
+export const GIVEBUTTER = {
+  // Public Givebutter campaign URL (not a secret). Checkout stays on Givebutter.
+  // Env var overrides the default if a new campaign is published.
+  campaignUrl: (
+    process.env.NEXT_PUBLIC_GIVEBUTTER_URL ||
+    "https://givebutter.com/sparklab-donations-4aerwi"
+  ).replace(/\/$/, ""),
+} as const;
+
 export const ROUTES = [
   { href: "/", label: "Home" },
   { href: "/program", label: "The Program" },

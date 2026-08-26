@@ -116,4 +116,27 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
       },
     ],
   },
+  {
+    id: "giving",
+    title: "Giving",
+    description: "Individual gifts and how they reach SparkLab.",
+    items: [
+      {
+        q: "How do I donate?",
+        a: "Use the Donate tab in the header, or go to the Donate page. Individual gifts are processed through Givebutter, the fundraising platform we use for checkout and receipts.",
+      },
+      {
+        q: "What does my donation support?",
+        a: "Gifts help fund the student prize pool, bring SparkLab to more schools, and keep each 8-week cohort running — curriculum, facilitation, mentors, and the pitch night.",
+      },
+      {
+        q: "Can my company sponsor instead of making an individual gift?",
+        a: "Yes. Corporate sponsorship — prize-pool underwriting, brand partnership, multi-cohort support — starts on the Contact page. Choose “I want to Sponsor” and tell us about your company. That’s a different path from an individual Givebutter gift.",
+      },
+      {
+        q: "Will I get a receipt?",
+        a: "Givebutter issues a receipt for every completed gift. If you need additional documentation, email outreach@sparklabusa.com.",
+      },
+    ],
+  },
 ];
