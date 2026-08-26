@@ -1,0 +1,47 @@
+# SparkLab
+
+> SparkLab is an immersive 8-week entrepreneurship program for high school students based in Birmingham, Michigan. Students work in teams to build a real business — researching markets, designing a brand, building financial projections, and pitching to a panel of industry judges for cash prizes (1st place $7,500, 2nd place $5,000, 3rd place $2,500). SparkLab partners with schools across Michigan and the greater Midwest and is a collaborative initiative between SIGU and KMI.
+
+Key facts:
+- Program length: 8 weeks
+- Format: 42 video modules + facilitation guides + workbooks + final pitch competition
+- Audience: high school students (typically grades 9-12)
+- Recommended team size: 5 students; typical cohort size: 20-40 students
+- Time commitment: 2-3 hours per week, during class time
+- Cost: no public pricing; schools contact SparkLab to discuss partnership
+- Geographic reach: Michigan, with expansion across the Midwest
+- Contact: outreach@sparklabusa.com
+
+## Program
+
+- [The Program](https://sparklabusa.com/program): how the 42-module masterclass curriculum is structured and what teachers facilitate each week
+- [Competition](https://sparklabusa.com/competition): how the final pitch competition works, judging criteria, prize breakdown, and 2025 winners
+- [Cohort Schedule](https://sparklabusa.com/cohorts): past and upcoming SparkLab cohorts and pitch competition dates
+
+## Audiences
+
+- [For Students](https://sparklabusa.com/students): what high school students do in the program, time commitment, why they should join
+- [For Schools](https://sparklabusa.com/schools): how districts and individual schools bring SparkLab to their campus, what materials are provided, what teachers need to know
+- [For Mentors & Judges](https://sparklabusa.com/mentors): two volunteer paths (mentor or judge), commitment, what we look for
+
+## Cities served (Michigan)
+
+- [Birmingham, MI](https://sparklabusa.com/schools/birmingham-mi) — SparkLab's home base in Oakland County
+- [Royal Oak, MI](https://sparklabusa.com/schools/royal-oak-mi) — Oakland County
+- [Bloomfield Hills, MI](https://sparklabusa.com/schools/bloomfield-hills-mi) — Oakland County
+- [Troy, MI](https://sparklabusa.com/schools/troy-mi) — Oakland County
+- [Rochester, MI](https://sparklabusa.com/schools/rochester-mi) — Oakland County
+- [Detroit, MI](https://sparklabusa.com/schools/detroit-mi) — Wayne County
+- [Ann Arbor, MI](https://sparklabusa.com/schools/ann-arbor-mi) — Washtenaw County
+- [Grand Rapids, MI](https://sparklabusa.com/schools/grand-rapids-mi) — Kent County (West Michigan)
+
+## Blog
+
+- [Blog](https://sparklabusa.com/blog): practical writing on entrepreneurship education in Michigan high schools
+- [RSS feed](https://sparklabusa.com/blog/rss.xml)
+
+## About
+
+- [About SparkLab](https://sparklabusa.com/about): the program's mission and origin as a collaborative initiative between SIGU and KMI
+- [FAQ](https://sparklabusa.com/faq): common questions from students, teachers, parents, mentors, and judges
+- [Contact](https://sparklabusa.com/contact): contact form and newsletter signup

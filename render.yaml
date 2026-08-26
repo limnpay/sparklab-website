@@ -1,0 +1,22 @@
+# Render Blueprint — SparkLab marketing site (Next.js 15)
+# Docs: https://render.com/docs/blueprint-spec
+services:
+  - type: web
+    name: sparklab-website
+    runtime: node
+    plan: free
+    region: ohio
+    branch: main
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
+      - key: NEXT_PUBLIC_SITE_URL
+        # Update after first deploy to your onrender.com URL, then to sparklabusa.com
+        sync: false
+      - key: NEXT_PUBLIC_FORMSPREE_CONTACT_ID
+        sync: false
+      - key: NEXT_PUBLIC_FORMSPREE_NEWSLETTER_ID
+        sync: false
