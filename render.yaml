@@ -17,6 +17,6 @@ services:
         # Update after first deploy to your onrender.com URL, then to sparklabusa.com
         sync: false
       - key: NEXT_PUBLIC_FORMSPREE_CONTACT_ID
-        sync: false
+        value: mljereqq
       - key: NEXT_PUBLIC_FORMSPREE_NEWSLETTER_ID
         sync: false

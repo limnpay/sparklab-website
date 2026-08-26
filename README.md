@@ -83,10 +83,10 @@ Routes provided by the framework:
 
 Both forms POST JSON to Formspree. They render and submit even without env vars (showing a graceful "not configured yet" message) so local dev is frictionless. To wire them up:
 
-1. Create two forms at <https://formspree.io> (one for contact, one for newsletter).
-2. Copy the form IDs into `.env.local`:
+1. The contact form is already wired to Formspree (`mljereqq`). Create a second form for the newsletter.
+2. Copy any overrides into `.env.local`:
    ```env
-   NEXT_PUBLIC_FORMSPREE_CONTACT_ID=xxxxxxxx
+   NEXT_PUBLIC_FORMSPREE_CONTACT_ID=mljereqq
    NEXT_PUBLIC_FORMSPREE_NEWSLETTER_ID=xxxxxxxx
    ```
 3. Restart `npm run dev`.

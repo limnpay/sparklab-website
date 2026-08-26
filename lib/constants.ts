@@ -42,7 +42,8 @@ export const SOCIAL = {
 } as const;
 
 export const FORMSPREE = {
-  contactId: process.env.NEXT_PUBLIC_FORMSPREE_CONTACT_ID ?? "",
+  // Public Formspree form IDs (not secrets). Env vars override the defaults.
+  contactId: process.env.NEXT_PUBLIC_FORMSPREE_CONTACT_ID || "mljereqq",
   newsletterId: process.env.NEXT_PUBLIC_FORMSPREE_NEWSLETTER_ID ?? "",
 } as const;
 

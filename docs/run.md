@@ -50,7 +50,7 @@ NEXT_PUBLIC_SITE_URL=http://localhost:3000
 
 # Formspree form IDs (public — Formspree IDs are not secrets).
 # Get them at https://formspree.io after creating one form for each.
-NEXT_PUBLIC_FORMSPREE_CONTACT_ID=xxxxxxxx
+NEXT_PUBLIC_FORMSPREE_CONTACT_ID=mljereqq
 NEXT_PUBLIC_FORMSPREE_NEWSLETTER_ID=xxxxxxxx
 ```
 
