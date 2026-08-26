@@ -43,6 +43,7 @@ export function PageHero({
           fill
           priority
           sizes="100vw"
+          quality={75}
           className={cn(
             "object-cover opacity-25",
             imagePosition === "top" && "object-top",

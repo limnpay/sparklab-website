@@ -5,7 +5,12 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   compress: true,
   images: {
+    // Self-hosted JPEGs are pre-compressed (npm run optimize-images).
+    // Skipping runtime optimization keeps Render's 512MB free tier from
+    // OOM-crashing when sharp processes multi-megabyte uploads.
+    unoptimized: true,
     formats: ["image/avif", "image/webp"],
+    minimumCacheTTL: 31536000,
   },
   async redirects() {
     return [

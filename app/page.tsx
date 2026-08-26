@@ -112,6 +112,7 @@ export default function HomePage() {
             fill
             priority
             sizes="100vw"
+            quality={80}
             className="object-cover opacity-60"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-[color:var(--color-bg)]/60 via-[color:var(--color-bg)]/85 to-[color:var(--color-bg)]" />
