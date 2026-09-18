@@ -25,14 +25,13 @@ const ROUTES = [
   { name: "05-schools", path: "/schools" },
   { name: "06-mentors", path: "/mentors" },
   { name: "07-competition", path: "/competition" },
-  { name: "08-cohorts", path: "/cohorts" },
-  { name: "09-blog-index", path: "/blog" },
-  { name: "10-blog-post", path: "/blog/why-entrepreneurship-belongs-in-high-school" },
-  { name: "11-city-birmingham", path: "/schools/birmingham-mi" },
-  { name: "12-faq", path: "/faq" },
-  { name: "13-donate", path: "/donate" },
-  { name: "14-contact", path: "/contact" },
-  { name: "15-notfound", path: "/this-route-does-not-exist" },
+  { name: "08-blog-index", path: "/blog" },
+  { name: "09-blog-post", path: "/blog/why-entrepreneurship-belongs-in-high-school" },
+  { name: "10-city-birmingham", path: "/schools/birmingham-mi" },
+  { name: "11-faq", path: "/faq" },
+  { name: "12-donate", path: "/donate" },
+  { name: "13-contact", path: "/contact" },
+  { name: "14-notfound", path: "/this-route-does-not-exist" },
 ];
 
 const VIEWPORTS = [

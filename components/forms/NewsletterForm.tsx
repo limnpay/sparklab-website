@@ -43,7 +43,7 @@ export function NewsletterForm({ source = "footer" }: { source?: string }) {
         if (res.ok) {
           setStatus("success");
           setMessage(
-            "You're in. We'll send the next cohort update straight to your inbox."
+            "You're in. We'll send program stories and ways to get involved straight to your inbox."
           );
           setEmail("");
         } else {

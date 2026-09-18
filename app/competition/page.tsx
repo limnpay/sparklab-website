@@ -44,7 +44,7 @@ const HOW = [
     icon: Users,
     title: "Form your team",
     description:
-      "Students form teams of 5 during their SparkLab cohort and choose a business idea to develop together.",
+      "Students form teams of 5 during their SparkLab program and choose a business idea to develop together.",
   },
   {
     icon: Target,
@@ -101,29 +101,12 @@ export default function CompetitionPage() {
       <JsonLd
         data={{
           "@context": "https://schema.org",
-          "@type": "Event",
+          "@type": "WebPage",
           name: "SparkLab Pitch Competition",
+          url: `${SITE.url}/competition`,
           description: `SparkLab's culminating pitch competition where high school student teams present their businesses to a panel of industry judges for a ${PRIZES.totalPool} prize pool.`,
-          eventStatus: "https://schema.org/EventScheduled",
-          eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
-          location: {
-            "@type": "Place",
-            name: `${SITE.city}, ${SITE.region}`,
-            address: {
-              "@type": "PostalAddress",
-              addressLocality: SITE.city,
-              addressRegion: SITE.regionCode,
-              addressCountry: SITE.countryCode,
-            },
-          },
-          organizer: { "@id": `${SITE.url}/#organization` },
-          offers: {
-            "@type": "Offer",
-            price: "0",
-            priceCurrency: "USD",
-            availability: "https://schema.org/InStock",
-            url: `${SITE.url}/contact`,
-          },
+          isPartOf: { "@id": `${SITE.url}/#website` },
+          about: { "@id": `${SITE.url}/#organization` },
         }}
       />
 
@@ -135,7 +118,7 @@ export default function CompetitionPage() {
             <span className="text-gradient-spark">Win.</span>
           </>
         }
-        description={`The grand finale of every cohort. Student teams pitch real businesses to a panel of working entrepreneurs and investors, competing for a ${PRIZES.totalPool} prize pool.`}
+        description={`The grand finale of every program. Student teams pitch real businesses to a panel of working entrepreneurs and investors, competing for a ${PRIZES.totalPool} prize pool.`}
         imageSrc="/images/heroes/competition.jpg"
       >
         <ButtonLink href="/program">
@@ -177,7 +160,7 @@ export default function CompetitionPage() {
               <span className="text-gradient-electric">competition stage.</span>
             </>
           }
-          description="The pitch competition is the culmination of an 8-week cohort. Teams that complete the program are eligible to compete."
+          description="The pitch competition is the culmination of an 8-week program. Teams that complete the program are eligible to compete."
         />
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {HOW.map((s, i) => (
@@ -229,7 +212,7 @@ export default function CompetitionPage() {
       {/* 2025 WINNERS */}
       <Section tone="card" ariaLabelledby="winners-heading">
         <SectionHeader
-          eyebrow="2025 Cohort"
+          eyebrow="2025 winners"
           title={
             <>
               Meet our{" "}
@@ -301,8 +284,8 @@ export default function CompetitionPage() {
           </h2>
           <p className="mt-5 text-lg text-[color:var(--color-fg-muted)]">
             The pitch competition is open to teams who complete a SparkLab
-            cohort. Start with your school — or reach out and we'll point you
-            at the next cohort.
+            program at their school. If your school doesn&apos;t offer it yet,
+            reach out and we&apos;ll help bring SparkLab there.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-3 justify-center">
             <Magnetic strength={0.25}>

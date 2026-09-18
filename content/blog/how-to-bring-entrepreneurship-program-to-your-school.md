@@ -69,7 +69,7 @@ If you start the conversation today, here's a realistic timeline:
 - **Now:** Identify the slot and teacher champion.
 - **+30 days:** Evaluate 2-3 program options. Brief your principal and (if needed) district CTE coordinator.
 - **+60 days:** Lock in the partner, dates, and venue for the pitch event.
-- **+90 days:** First cohort starts.
+- **+90 days:** Program starts.
 - **+5 months:** First pitch competition.
 
 That's one full school semester from "we should do this" to students standing on stage pitching real businesses.

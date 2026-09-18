@@ -72,7 +72,7 @@ const WHY = [
     icon: Calendar,
     title: "Flexible commitment",
     description:
-      "Volunteer for one cohort or come back every year. Two role options to fit your bandwidth.",
+      "Volunteer with one school program or come back every year. Two role options to fit your bandwidth.",
   },
 ];
 
@@ -120,7 +120,7 @@ export default function MentorsPage() {
               <span className="text-gradient-electric">fits your bandwidth.</span>
             </>
           }
-          description="Most of our volunteers start as a judge and graduate to mentoring a team the following cohort. Some do both. Both are essential."
+          description="Most of our volunteers start as a judge and later mentor a team. Some do both. Both are essential."
         />
         <div className="mt-14 grid gap-6 md:grid-cols-2">
           {ROLES.map((r, i) => (
@@ -230,7 +230,7 @@ export default function MentorsPage() {
           </h2>
           <p className="mt-5 text-lg text-[color:var(--color-fg-muted)]">
             Tell us a bit about your background and which role appeals to
-            you. We'll match you with the next cohort.
+            you. We'll match you with a school that's running SparkLab.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-3 justify-center">
             <ButtonLink href="/contact" size="lg">

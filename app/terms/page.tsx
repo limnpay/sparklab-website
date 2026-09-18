@@ -52,7 +52,7 @@ export default function TermsPage() {
             Participation in the SparkLab program is governed by separate
             agreements between {SITE.name} and partner schools. Cash prizes,
             judging decisions, and competition rules are at the sole
-            discretion of {SITE.name} and announced before each cohort.
+            discretion of {SITE.name} and announced before each program.
           </p>
 
           <h2>Disclaimers</h2>

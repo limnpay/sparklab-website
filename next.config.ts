@@ -19,6 +19,7 @@ const nextConfig: NextConfig = {
       { source: "/for-students", destination: "/students", permanent: true },
       { source: "/for-schools", destination: "/schools", permanent: true },
       { source: "/for-mentors", destination: "/mentors", permanent: true },
+      { source: "/cohorts", destination: "/schools", permanent: true },
     ];
   },
   async headers() {

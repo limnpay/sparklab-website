@@ -16,9 +16,9 @@ import { Reveal } from "@/components/ui/Reveal";
 import { BreadcrumbsJsonLd, JsonLd } from "@/components/seo/JsonLd";
 
 export const metadata = buildMetadata({
-  title: "Donate — Fuel the Next Cohort",
+  title: "Donate — Bring SparkLab to More Schools",
   description:
-    "Support SparkLab with an individual gift. Your donation helps fund student prizes, bring the program to more Michigan schools, and keep every cohort running.",
+    "Support SparkLab with an individual gift. Your donation helps fund student prizes, bring the program to more Michigan schools, and keep every program running.",
   path: "/donate",
   keywords: [
     "donate to SparkLab",
@@ -46,7 +46,7 @@ const IMPACT: Array<{
   },
   {
     icon: Heart,
-    title: "Every cohort",
+    title: "Every program",
     description:
       "Curriculum, facilitation, mentors, and the pitch night all have to run. Individual gifts help keep the program in motion.",
   },
@@ -104,7 +104,7 @@ export default function DonatePage() {
         title={
           <>
             Fuel the spark.{" "}
-            <span className="text-gradient-spark">Fund the next cohort.</span>
+            <span className="text-gradient-spark">Bring it to more schools.</span>
           </>
         }
         description="Individual gifts go through Givebutter. Corporate sponsorships — prize-pool underwriting, brand partnership — still start with a conversation."
@@ -127,7 +127,7 @@ export default function DonatePage() {
               <span className="text-gradient-electric">helps run.</span>
             </>
           }
-          description="SparkLab is an 8-week entrepreneurship program for high school students. Gifts support the work that makes each cohort possible."
+          description="SparkLab is an 8-week entrepreneurship program for high school students. Gifts support the work that makes each program possible."
         />
         <div className="mt-14 grid gap-6 sm:grid-cols-3">
           {IMPACT.map((item, i) => (
@@ -184,12 +184,12 @@ export default function DonatePage() {
                 Want to sponsor as a company?
               </h3>
               <p className="mt-3 text-[color:var(--color-fg-muted)]">
-                Brand partnership, prize-pool underwriting, and multi-cohort
+                Brand partnership, prize-pool underwriting, and multi-school
                 support are a different path. Tell us about your company and
                 we'll follow up.
               </p>
               <div className="mt-6">
-                <ButtonLink href="/contact" variant="outline">
+                <ButtonLink href="/contact?interest=sponsor" variant="outline">
                   Talk sponsorship
                   <ArrowRight className="h-4 w-4" />
                 </ButtonLink>

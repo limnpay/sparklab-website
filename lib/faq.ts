@@ -61,6 +61,14 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
         a: "No. Prize money for the final competition comes from SparkLab and our sponsors. Schools focus on running the program — we handle the competition prize pool.",
       },
       {
+        q: "When does SparkLab start?",
+        a: "There is no shared start date. Every partner school launches SparkLab on its own calendar. Reach out to the SparkLab team and we'll plan a timeline that fits your semester.",
+      },
+      {
+        q: "How do we bring SparkLab to our school?",
+        a: "Contact the SparkLab team through the form or email outreach@sparklabusa.com. Tell us about your school or district and we'll start the conversation. We don't run a public waitlist or reserve-a-spot process.",
+      },
+      {
         q: "Can we customize the program?",
         a: "Yes. While our core 8-week curriculum is well-designed, we work with schools to adapt timing, depth, and emphasis to fit local needs.",
       },
@@ -96,7 +104,7 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
     items: [
       {
         q: "What's the time commitment for mentors?",
-        a: "Mentors typically meet with their assigned team for 30-minute check-ins every two weeks throughout the 8-week program. We also do async feedback on team deliverables. Total commitment is roughly 4-6 hours over the cohort.",
+        a: "Mentors typically meet with their assigned team for 30-minute check-ins every two weeks throughout the 8-week program. We also do async feedback on team deliverables. Total commitment is roughly 4-6 hours over the program.",
       },
       {
         q: "What background do I need to mentor?",
@@ -127,11 +135,11 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
       },
       {
         q: "What does my donation support?",
-        a: "Gifts help fund the student prize pool, bring SparkLab to more schools, and keep each 8-week cohort running — curriculum, facilitation, mentors, and the pitch night.",
+        a: "Gifts help fund the student prize pool, bring SparkLab to more schools, and keep each 8-week program running — curriculum, facilitation, mentors, and the pitch night.",
       },
       {
         q: "Can my company sponsor instead of making an individual gift?",
-        a: "Yes. Corporate sponsorship — prize-pool underwriting, brand partnership, multi-cohort support — starts on the Contact page. Choose “I want to Sponsor” and tell us about your company. That’s a different path from an individual Givebutter gift.",
+        a: "Yes. Corporate sponsorship — prize-pool underwriting, brand partnership, multi-school support — starts on the Contact page. Choose “I want to Sponsor” and tell us about your company. That’s a different path from an individual Givebutter gift.",
       },
       {
         q: "Will I get a receipt?",

@@ -41,7 +41,7 @@ export default function PrivacyPage() {
             <li>
               <strong>Program participation data:</strong> when a school
               partners with us, we may collect rosters, team assignments, and
-              project submissions necessary to run the cohort.
+              project submissions necessary to run the program.
             </li>
             <li>
               <strong>Anonymous usage information:</strong> aggregated,

@@ -12,7 +12,6 @@ import {
 } from "lucide-react";
 import { buildMetadata } from "@/lib/seo";
 import { PRIZES, PROGRAM, SITE, STATS } from "@/lib/constants";
-import { COHORTS } from "@/lib/cohorts";
 import { ButtonLink } from "@/components/ui/Button";
 import { Section, SectionHeader } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
@@ -25,7 +24,6 @@ import { NoiseOverlay } from "@/components/effects/NoiseOverlay";
 import { KineticText } from "@/components/effects/KineticText";
 import { AnimatedNumber } from "@/components/effects/AnimatedNumber";
 import { Magnetic } from "@/components/effects/Magnetic";
-import { Countdown } from "@/components/effects/Countdown";
 import { ScrollCue } from "@/components/effects/ScrollCue";
 
 export const metadata = buildMetadata({
@@ -78,11 +76,6 @@ const WEEKS = [
 ];
 
 export default function HomePage() {
-  const now = Date.now();
-  const nextCohort = COHORTS.filter(
-    (c) => c.status !== "completed" && new Date(c.startDate).getTime() > now
-  ).sort((a, b) => a.startDate.localeCompare(b.startDate))[0];
-
   return (
     <>
       <BreadcrumbsJsonLd items={[{ name: "Home", href: "/" }]} />
@@ -202,56 +195,59 @@ export default function HomePage() {
               </Reveal>
             </div>
 
-            {/* Right: floating glass "next cohort" card */}
-            {nextCohort ? (
-              <Reveal delay={0.35} direction="right">
-                <aside
-                  aria-label="Next SparkLab cohort"
-                  className="relative rounded-3xl border border-[color:var(--color-border-strong)] bg-[color:var(--color-bg-card)]/60 backdrop-blur-2xl p-7 sm:p-8 shadow-[0_25px_80px_-20px_rgba(0,0,0,0.5)]"
-                >
-                  {/* corner accent */}
-                  <div
-                    aria-hidden
-                    className="absolute -top-px left-6 right-6 h-px bg-gradient-to-r from-transparent via-[color:var(--color-electric)]/60 to-transparent"
-                  />
-                  <div className="flex items-center justify-between gap-3">
-                    <p className="eyebrow !text-[color:var(--color-electric)]">Live</p>
-                    <span className="text-xs text-[color:var(--color-fg-subtle)] uppercase tracking-wider">
-                      Next cohort
-                    </span>
-                  </div>
-                  <h2 className="mt-3 text-2xl font-bold">{nextCohort.name}</h2>
-                  <p className="mt-1.5 text-sm text-[color:var(--color-fg-muted)]">
-                    Applications open · Program starts{" "}
-                    {new Date(nextCohort.startDate + "T00:00:00").toLocaleDateString(
-                      "en-US",
-                      { month: "long", day: "numeric", year: "numeric" }
-                    )}
+            {/* Right: school outreach card — no shared dates or waitlist */}
+            <Reveal delay={0.35} direction="right">
+              <aside
+                aria-label="Bring SparkLab to your school"
+                className="relative rounded-3xl border border-[color:var(--color-border-strong)] bg-[color:var(--color-bg-card)]/60 backdrop-blur-2xl p-7 sm:p-8 shadow-[0_25px_80px_-20px_rgba(0,0,0,0.5)]"
+              >
+                <div
+                  aria-hidden
+                  className="absolute -top-px left-6 right-6 h-px bg-gradient-to-r from-transparent via-[color:var(--color-electric)]/60 to-transparent"
+                />
+                <div className="flex items-center justify-between gap-3">
+                  <p className="eyebrow !text-[color:var(--color-electric)]">
+                    For schools
                   </p>
-                  <div className="mt-6">
-                    <Countdown targetIso={nextCohort.startDate} />
-                  </div>
-                  <div className="mt-6 flex flex-wrap items-center gap-3 pt-6 border-t border-[color:var(--color-border)]">
-                    <div className="flex-1 min-w-[8rem]">
-                      <div className="text-xs text-[color:var(--color-fg-subtle)] uppercase tracking-wider">
-                        Prize pool
-                      </div>
-                      <div className="mt-1 text-2xl font-bold text-[color:var(--color-spark)]">
-                        <AnimatedNumber value={PRIZES.totalPool} />
-                      </div>
-                    </div>
-                    <Link
-                      href="/cohorts"
-                      data-cursor="cta"
-                      className="inline-flex items-center gap-1.5 text-sm font-medium text-[color:var(--color-electric)] hover:gap-2 transition-all"
-                    >
-                      See schedule
-                      <ArrowRight className="h-3.5 w-3.5" />
-                    </Link>
-                  </div>
-                </aside>
-              </Reveal>
-            ) : null}
+                  <School
+                    className="h-5 w-5 text-[color:var(--color-electric)]"
+                    aria-hidden
+                  />
+                </div>
+                <h2 className="mt-3 text-2xl font-bold">
+                  Bring SparkLab to your campus
+                </h2>
+                <p className="mt-3 text-sm text-[color:var(--color-fg-muted)] leading-relaxed">
+                  Every school starts on its own calendar. Reach out to the
+                  SparkLab team and we&apos;ll plan a program that fits yours.
+                </p>
+                <ul className="mt-6 space-y-2.5 text-sm text-[color:var(--color-fg-muted)]">
+                  {[
+                    "Fits a regular class period",
+                    "Teachers facilitate; we provide the curriculum",
+                    "Timing set with your school, not a public waitlist",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-2.5">
+                      <CheckCircle2
+                        className="mt-0.5 h-4 w-4 flex-shrink-0 text-[color:var(--color-electric)]"
+                        aria-hidden
+                      />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-7 pt-6 border-t border-[color:var(--color-border)]">
+                  <Link
+                    href="/contact?interest=school"
+                    data-cursor="cta"
+                    className="inline-flex items-center gap-1.5 text-sm font-medium text-[color:var(--color-electric)] hover:gap-2 transition-all"
+                  >
+                    Talk to the SparkLab team
+                    <ArrowRight className="h-3.5 w-3.5" />
+                  </Link>
+                </div>
+              </aside>
+            </Reveal>
           </div>
 
           {/* Bottom row: stats + scroll cue */}
@@ -329,11 +325,11 @@ export default function HomePage() {
           eyebrow="See it in action"
           title={
             <>
-              Real cohorts. Real{" "}
+              Real classrooms. Real{" "}
               <span className="text-gradient-electric">pitches.</span>
             </>
           }
-          description="Photos from past SparkLab cohorts across Michigan. Students researching markets, building decks, and competing on stage."
+          description="Photos from SparkLab programs across Michigan. Students researching markets, building decks, and competing on stage."
         />
         <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
           {GALLERY.map((g, i) => (
@@ -368,7 +364,7 @@ export default function HomePage() {
               <span className="text-gradient-spark">Four roles.</span>
             </>
           }
-          description="Students, schools, volunteer mentors and judges, and sponsors — SparkLab connects all four to make every cohort run."
+          description="Students, schools, volunteer mentors and judges, and sponsors — SparkLab connects all four to make every program run."
         />
 
         <div className="mt-14 grid gap-4 sm:gap-5 md:grid-cols-6 md:grid-rows-2 md:auto-rows-fr min-h-[38rem]">
@@ -397,7 +393,7 @@ export default function HomePage() {
             href="/mentors"
             title="Mentors & Judges"
             eyebrow="I'm an operator"
-            body="Two flexible ways to give back — mentor a team through the cohort or judge the final pitch competition."
+            body="Two flexible ways to give back — mentor a team through the program or judge the final pitch competition."
             image="/images/audiences/mentors.jpg"
             icon={Sparkles}
             accent="electric"
@@ -556,7 +552,7 @@ export default function HomePage() {
           </div>
           <div className="mt-10">
             <Magnetic strength={0.25}>
-              <ButtonLink href="/contact">
+              <ButtonLink href="/contact?interest=school">
                 Bring SparkLab to your school
                 <ArrowRight className="h-4 w-4" />
               </ButtonLink>
@@ -583,7 +579,7 @@ export default function HomePage() {
           <div className="inline-flex items-center gap-2 rounded-full border border-[color:var(--color-border-strong)] bg-[color:var(--color-bg-card)]/60 backdrop-blur-md px-4 py-1.5 text-xs font-medium">
             <Zap className="h-3.5 w-3.5 text-[color:var(--color-electric)]" />
             <span className="text-[color:var(--color-fg-muted)]">
-              Applications open now
+              Now partnering with schools
             </span>
           </div>
           <h2 id="cta-heading" className="mt-6 text-4xl md:text-6xl font-bold leading-[1.05]">

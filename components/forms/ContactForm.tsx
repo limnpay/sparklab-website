@@ -62,8 +62,20 @@ const INTERESTS: Array<{
   },
 ];
 
-export function ContactForm() {
-  const [interest, setInterest] = useState<InterestType>("student");
+const INTEREST_IDS = ["student", "school", "mentor", "sponsor"] as const;
+
+function isInterestType(value: string | undefined): value is InterestType {
+  return INTEREST_IDS.includes(value as InterestType);
+}
+
+export function ContactForm({
+  initialInterest = "student",
+}: {
+  initialInterest?: InterestType;
+}) {
+  const [interest, setInterest] = useState<InterestType>(
+    isInterestType(initialInterest) ? initialInterest : "student"
+  );
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [organization, setOrganization] = useState("");

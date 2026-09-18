@@ -257,7 +257,7 @@ export default function ProgramPage() {
               id="feedback-heading"
               className="mt-5 text-3xl sm:text-4xl font-bold"
             >
-              Continuous improvement, every cohort.
+              Continuous improvement, every program.
             </h2>
             <p className="mt-5 text-lg text-[color:var(--color-fg-muted)]">
               We get better every year. The curriculum evolves based on

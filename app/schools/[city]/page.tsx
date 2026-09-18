@@ -105,7 +105,7 @@ export default async function CityPage({ params }: { params: Params }) {
         imageSrc="/images/heroes/schools.jpg"
       >
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
-          <ButtonLink href="/contact" size="lg">
+          <ButtonLink href="/contact?interest=school" size="lg">
             Bring SparkLab to your {city.name} school
             <ArrowRight className="h-5 w-5" />
           </ButtonLink>
@@ -136,7 +136,7 @@ export default async function CityPage({ params }: { params: Params }) {
               </h2>
               <p className="mt-1.5 text-sm text-[color:var(--color-fg-muted)]">
                 {city.status === "active"
-                  ? `We're already running cohorts with schools in the ${city.name} area. Reach out to your school administrator or contact us directly to enroll a class.`
+                  ? `We're already partnering with schools in the ${city.name} area. Reach out to the SparkLab team and we'll help bring the program to your class.`
                   : `We're actively building partnerships with schools in ${city.county}. Be among the first ${city.name} schools to bring SparkLab to your students.`}
               </p>
             </div>
@@ -280,12 +280,12 @@ export default async function CityPage({ params }: { params: Params }) {
             Ready to bring SparkLab to a {city.name} school?
           </h2>
           <p className="mt-5 text-lg text-[color:var(--color-fg-muted)]">
-            Tell us about your school — public, private, charter — and which
-            cohort timing would work. We typically respond within 2 business
-            days.
+            Tell us about your school — public, private, or charter — and
+            we&apos;ll plan a timeline that fits your calendar. We typically
+            respond within 2 business days.
           </p>
           <div className="mt-10">
-            <ButtonLink href="/contact" size="lg">
+            <ButtonLink href="/contact?interest=school" size="lg">
               Start the conversation
               <ArrowRight className="h-5 w-5" />
             </ButtonLink>

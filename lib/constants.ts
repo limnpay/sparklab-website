@@ -69,7 +69,6 @@ export const ROUTES = [
     ],
   },
   { href: "/competition", label: "Competition" },
-  { href: "/cohorts", label: "Cohorts" },
   { href: "/blog", label: "Blog" },
   { href: "/about", label: "About" },
   { href: "/faq", label: "FAQ" },
@@ -79,7 +78,7 @@ export const PROGRAM = {
   weeks: 8,
   videoModules: 42,
   teamSize: 5,
-  cohortSize: "20-40 students",
+  typicalClassSize: "20-40 students",
   weeklyHours: "2-3 hours",
 } as const;
 

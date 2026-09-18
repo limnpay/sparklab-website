@@ -19,7 +19,20 @@ export const metadata = buildMetadata({
   ],
 });
 
-export default function ContactPage() {
+export default async function ContactPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ interest?: string }>;
+}) {
+  const { interest } = await searchParams;
+  const initialInterest =
+    interest === "school" ||
+    interest === "mentor" ||
+    interest === "sponsor" ||
+    interest === "student"
+      ? interest
+      : "student";
+
   return (
     <>
       <BreadcrumbsJsonLd
@@ -62,7 +75,7 @@ export default function ContactPage() {
               situation.
             </p>
             <div className="mt-8">
-              <ContactForm />
+              <ContactForm initialInterest={initialInterest} />
             </div>
           </div>
 
@@ -141,7 +154,8 @@ export default function ContactPage() {
                   <strong className="text-[color:var(--color-fg)]">
                     Schools:
                   </strong>{" "}
-                  pick "I represent a School" and share your school or district.
+                  pick "I represent a School" and tell us how to bring SparkLab
+                  to your campus. Every school starts on its own calendar.
                 </li>
                 <li>
                   <strong className="text-[color:var(--color-fg)]">

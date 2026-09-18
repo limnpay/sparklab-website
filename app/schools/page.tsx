@@ -67,7 +67,7 @@ const BENEFITS: Benefit[] = [
     icon: Users,
     title: "Industry connection",
     description:
-      "Working entrepreneurs and operators mentor students throughout the cohort.",
+      "Working entrepreneurs and operators mentor students throughout the program.",
     bullets: [
       "Mentor pool from local Michigan companies",
       "Industry judges for the final pitch",
@@ -106,7 +106,7 @@ const PROCESS = [
   {
     step: "Compete",
     description:
-      "Cohort culminates in a live pitch competition with industry judges.",
+      "The program culminates in a live pitch competition with industry judges.",
   },
 ];
 
@@ -131,7 +131,7 @@ export default function SchoolsPage() {
         description={`Drop-in ready: ${PROGRAM.weeks} weeks, ${PROGRAM.videoModules} masterclass videos, full facilitation guides, and a culminating pitch competition. Designed to fit a standard class period in any Michigan, Midwest, or Midwest-adjacent high school.`}
         imageSrc="/images/heroes/schools.jpg"
       >
-        <ButtonLink href="/contact" size="lg">
+        <ButtonLink href="/contact?interest=school" size="lg">
           Bring SparkLab to your school
           <ArrowRight className="h-5 w-5" />
         </ButtonLink>
@@ -149,7 +149,7 @@ export default function SchoolsPage() {
               <span className="text-gradient-electric">lifts your existing program.</span>
             </>
           }
-          description="Schools partner with SparkLab because it gives teachers real entrepreneurship content they can deliver — and gives students an experience that compounds far beyond the cohort."
+          description="Schools partner with SparkLab because it gives teachers real entrepreneurship content they can deliver — and gives students an experience that compounds far beyond the program."
         />
         <div className="mt-14 grid gap-6 md:grid-cols-2">
           {BENEFITS.map((b, i) => (
@@ -208,7 +208,7 @@ export default function SchoolsPage() {
                 },
                 {
                   title: "Mentor network",
-                  body: "Working entrepreneurs and operators paired to your cohort",
+                  body: "Working entrepreneurs and operators paired to your class",
                 },
                 {
                   title: "Final pitch competition",
@@ -220,7 +220,7 @@ export default function SchoolsPage() {
                 },
                 {
                   title: "Implementation support",
-                  body: "Direct line to the SparkLab team throughout the cohort",
+                  body: "Direct line to the SparkLab team throughout the program",
                 },
               ].map((item) => (
                 <li key={item.title} className="flex items-start gap-4">
@@ -251,7 +251,7 @@ export default function SchoolsPage() {
               <span className="text-gradient-electric">hello</span> to launch.
             </>
           }
-          description="SparkLab is designed to be easy to bring in. Most partner schools go from first email to running cohort in under one semester."
+          description="SparkLab is designed to be easy to bring in. Most partner schools go from first email to running the program in under one semester."
         />
         <ol className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {PROCESS.map((p, i) => (
@@ -323,7 +323,7 @@ export default function SchoolsPage() {
         <p className="mt-8 text-center text-sm text-[color:var(--color-fg-muted)]">
           Don't see your city?{" "}
           <Link
-            href="/contact"
+            href="/contact?interest=school"
             className="text-[color:var(--color-spark)] hover:underline font-medium"
           >
             Tell us where to expand next
@@ -331,7 +331,7 @@ export default function SchoolsPage() {
           .
         </p>
         <div className="mt-10 text-center">
-          <ButtonLink href="/contact" size="lg">
+          <ButtonLink href="/contact?interest=school" size="lg">
             Start the conversation
             <ArrowRight className="h-5 w-5" />
           </ButtonLink>

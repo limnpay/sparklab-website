@@ -37,7 +37,7 @@ That's the gap SparkLab exists to close.
 
 ## What changes when students get this experience
 
-In our first SparkLab cohort, students who told us in week 1 that they "weren't business people" stood on a competition stage in week 8 and pitched a real business to a panel of working entrepreneurs. They handled hard questions in real time. They defended their numbers. They won cash prizes that went directly to them.
+In our first SparkLab program, students who told us in week 1 that they "weren't business people" stood on a competition stage in week 8 and pitched a real business to a panel of working entrepreneurs. They handled hard questions in real time. They defended their numbers. They won cash prizes that went directly to them.
 
 The thing is: very few of those students were "business people" before SparkLab. They were just high schoolers given the right structure, the right mentors, and the chance to actually try.
 

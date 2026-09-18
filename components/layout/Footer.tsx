@@ -8,7 +8,6 @@ const PROGRAM_LINKS = [
   { href: "/about", label: "About SparkLab" },
   { href: "/program", label: "The Program" },
   { href: "/competition", label: "Competition" },
-  { href: "/cohorts", label: "Cohort Schedule" },
   { href: "/blog", label: "Blog" },
   { href: "/faq", label: "FAQ" },
 ];
@@ -32,8 +31,8 @@ export function Footer() {
               Stay in the loop
             </h2>
             <p className="mt-3 text-[color:var(--color-fg-muted)]">
-              Cohort dates, competition highlights, and ways to get involved —
-              roughly once a month, never spammy.
+              Stories from partner schools, competition highlights, and ways
+              to get involved — roughly once a month, never spammy.
             </p>
             <div className="mt-6">
               <NewsletterForm source="footer" />

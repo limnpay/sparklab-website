@@ -26,7 +26,7 @@ export type City = {
   /** Lat/lng for the LocalBusiness geo block */
   latitude: number;
   longitude: number;
-  /** Whether SparkLab has already run cohorts here vs aspirationally serving */
+  /** Whether SparkLab has already partnered with schools here vs aspirationally serving */
   status: "active" | "expanding";
 };
 
@@ -37,7 +37,7 @@ export const CITIES: City[] = [
     county: "Oakland County",
     tagline: "Where SparkLab started.",
     intro:
-      "Birmingham is SparkLab's home base. We launched our first cohort here in partnership with local high schools and continue to run the program annually for students across the Birmingham Public Schools district.",
+      "Birmingham is SparkLab's home base. We launched here in partnership with local high schools and continue to run the program for students across the Birmingham Public Schools district.",
     nearbyCities: ["Royal Oak", "Bloomfield Hills", "Troy", "Beverly Hills"],
     population: 21813,
     latitude: 42.5467,
@@ -115,7 +115,7 @@ export const CITIES: City[] = [
     county: "Kent County",
     tagline: "Bringing SparkLab to West Michigan.",
     intro:
-      "Grand Rapids is West Michigan's entrepreneurial hub. SparkLab is actively building relationships with Grand Rapids Public Schools and surrounding districts to extend our 8-week cohort model across West Michigan high schools.",
+      "Grand Rapids is West Michigan's entrepreneurial hub. SparkLab is actively building relationships with Grand Rapids Public Schools and surrounding districts to extend our 8-week program across West Michigan high schools.",
     nearbyCities: ["Kentwood", "Wyoming", "East Grand Rapids", "Walker"],
     population: 198917,
     latitude: 42.9634,
