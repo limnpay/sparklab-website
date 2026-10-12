@@ -27,7 +27,8 @@ export function buildMetadata(seo: PageSEO): Metadata {
 
   return {
     metadataBase: new URL(SITE.url),
-    title: fullTitle,
+    // absolute: layout.tsx also has a `%s | SparkLab` template.
+    title: { absolute: fullTitle },
     description: seo.description,
     keywords: seo.keywords,
     alternates: {

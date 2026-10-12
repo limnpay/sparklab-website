@@ -28,21 +28,130 @@ export type City = {
   longitude: number;
   /** Whether SparkLab has already partnered with schools here vs aspirationally serving */
   status: "active" | "expanding";
+  /** Overrides the default status card when the generic active/expanding line would be wrong. */
+  statusDetail?: { headline: string; body: string };
+  /** Named 2026 partner schools in this city. */
+  partnerSchools?: string[];
 };
 
 export const CITIES: City[] = [
   {
+    slug: "new-baltimore-mi",
+    name: "New Baltimore",
+    county: "Macomb County",
+    tagline: "Anchor Bay High School is in the 2026 cohort.",
+    intro:
+      "Anchor Bay High School is one of nine Macomb County schools in SparkLab year 2. Students kicked off on October 5, 2026, pitch at their home school in week 8, and send a team to the county finals on December 17.",
+    nearbyCities: ["Richmond", "Clinton Township", "Macomb Township", "Sterling Heights"],
+    population: 12117,
+    latitude: 42.6811,
+    longitude: -82.7369,
+    status: "active",
+    partnerSchools: ["Anchor Bay High School"],
+  },
+  {
+    slug: "clinton-township-mi",
+    name: "Clinton Township",
+    county: "Macomb County",
+    tagline: "Chippewa Valley High School is in the 2026 cohort.",
+    intro:
+      "Chippewa Valley High School is running SparkLab year 2. Students build a business over eight weeks, pitch at school, and send a team to the Macomb County finals on December 17, 2026.",
+    nearbyCities: ["Sterling Heights", "Macomb Township", "Warren", "New Baltimore"],
+    population: 100513,
+    latitude: 42.5869,
+    longitude: -82.9199,
+    status: "active",
+    partnerSchools: ["Chippewa Valley High School"],
+  },
+  {
+    slug: "sterling-heights-mi",
+    name: "Sterling Heights",
+    county: "Macomb County",
+    tagline: "Two Utica Community Schools in the 2026 cohort.",
+    intro:
+      "Henry Ford II High School and Adlai E. Stevenson High School are both in SparkLab year 2. Each school sends two teams to the Macomb County Pitch Competition on December 17, 2026.",
+    nearbyCities: ["Warren", "Clinton Township", "Troy", "Macomb Township"],
+    population: 134346,
+    latitude: 42.5803,
+    longitude: -83.0302,
+    status: "active",
+    partnerSchools: [
+      "Henry Ford II High School",
+      "Adlai E. Stevenson High School",
+    ],
+  },
+  {
+    slug: "macomb-township-mi",
+    name: "Macomb Township",
+    county: "Macomb County",
+    tagline: "L'Anse Creuse North is in the 2026 cohort.",
+    intro:
+      "L'Anse Creuse North High School joined SparkLab year 2. Students kicked off on October 5, pitch at their home school, and send a team to the county finals on December 17, 2026.",
+    nearbyCities: ["Clinton Township", "New Baltimore", "Sterling Heights", "Romeo"],
+    population: 91663,
+    latitude: 42.6706,
+    longitude: -82.9174,
+    status: "active",
+    partnerSchools: ["L'Anse Creuse North High School"],
+  },
+  {
+    slug: "richmond-mi",
+    name: "Richmond",
+    county: "Macomb County",
+    tagline: "Richmond High School is in the 2026 cohort.",
+    intro:
+      "Richmond High School is part of SparkLab year 2. Students spend eight weeks building a real business and send a team to the Macomb County finals on December 17, 2026.",
+    nearbyCities: ["New Baltimore", "Romeo", "Macomb Township", "Clinton Township"],
+    population: 5878,
+    latitude: 42.8089,
+    longitude: -82.756,
+    status: "active",
+    partnerSchools: ["Richmond High School"],
+  },
+  {
+    slug: "romeo-mi",
+    name: "Romeo",
+    county: "Macomb County",
+    tagline: "Romeo High School sends two teams to finals.",
+    intro:
+      "Romeo High School is in the 2026 SparkLab cohort. Two teams advance from Romeo to the Macomb County Pitch Competition on December 17, 2026.",
+    nearbyCities: ["Richmond", "Macomb Township", "Sterling Heights", "Clinton Township"],
+    population: 3767,
+    latitude: 42.8028,
+    longitude: -83.0127,
+    status: "active",
+    partnerSchools: ["Romeo High School"],
+  },
+  {
+    slug: "warren-mi",
+    name: "Warren",
+    county: "Macomb County",
+    tagline: "Two Warren high schools in the 2026 cohort.",
+    intro:
+      "Warren Career Prep Center and Warren Woods High School are both running SparkLab year 2. Each school sends a team to the Macomb County finals on December 17, 2026.",
+    nearbyCities: ["Sterling Heights", "Clinton Township", "Troy", "Royal Oak"],
+    population: 139387,
+    latitude: 42.5145,
+    longitude: -83.0147,
+    status: "active",
+    partnerSchools: ["Warren Career Prep Center", "Warren Woods High School"],
+  },
+  {
     slug: "birmingham-mi",
     name: "Birmingham",
     county: "Oakland County",
-    tagline: "Where SparkLab started.",
+    tagline: "SparkLab's home base.",
     intro:
-      "Birmingham is SparkLab's home base. We launched here in partnership with local high schools and continue to run the program for students across the Birmingham Public Schools district.",
+      "Birmingham is where SparkLab is based. The 2026 school cohort is underway at nine high schools in Macomb County. Schools in Birmingham can bring the same eight-week program to their students.",
     nearbyCities: ["Royal Oak", "Bloomfield Hills", "Troy", "Beverly Hills"],
     population: 21813,
     latitude: 42.5467,
     longitude: -83.2113,
-    status: "active",
+    status: "expanding",
+    statusDetail: {
+      headline: "SparkLab is based in Birmingham.",
+      body: "Our home base is here. Year 2 is running at nine Macomb County high schools. Birmingham schools can bring the same program to their students. Reach out.",
+    },
   },
   {
     slug: "royal-oak-mi",

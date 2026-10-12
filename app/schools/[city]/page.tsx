@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { ArrowRight, MapPin, Users, CheckCircle2 } from "lucide-react";
 import { buildMetadata } from "@/lib/seo";
 import { CITIES, getCity } from "@/lib/cities";
-import { PROGRAM, SITE } from "@/lib/constants";
+import { COHORT, PRIZES, PROGRAM, SITE } from "@/lib/constants";
 import { ButtonLink } from "@/components/ui/Button";
 import { Section, SectionHeader } from "@/components/ui/Section";
 import { PageHero } from "@/components/ui/PageHero";
@@ -130,14 +130,16 @@ export default async function CityPage({ params }: { params: Params }) {
             </span>
             <div>
               <h2 id="status-heading" className="font-bold">
-                {city.status === "active"
-                  ? `SparkLab is active in ${city.name}.`
-                  : `SparkLab is expanding to ${city.name}.`}
+                {city.statusDetail?.headline ??
+                  (city.status === "active"
+                    ? `SparkLab is active in ${city.name}.`
+                    : `SparkLab is expanding to ${city.name}.`)}
               </h2>
               <p className="mt-1.5 text-sm text-[color:var(--color-fg-muted)]">
-                {city.status === "active"
-                  ? `We're already partnering with schools in the ${city.name} area. Reach out to the SparkLab team and we'll help bring the program to your class.`
-                  : `We're actively building partnerships with schools in ${city.county}. Be among the first ${city.name} schools to bring SparkLab to your students.`}
+                {city.statusDetail?.body ??
+                  (city.status === "active"
+                    ? `We're already partnering with ${city.partnerSchools?.join(" and ") ?? "schools"} in ${city.name}. Year 2 kicked off ${COHORT.kickoff}.`
+                    : `We're actively building partnerships with schools in ${city.county}. Be among the first ${city.name} schools to bring SparkLab to your students.`)}
               </p>
             </div>
           </div>
@@ -170,7 +172,10 @@ export default async function CityPage({ params }: { params: Params }) {
             },
             {
               title: "Real cash prizes",
-              body: `Top ${city.name}-area teams compete in our regional pitch competition for a $15,000 prize pool.`,
+              body:
+                city.status === "active"
+                  ? `Teams pitch at school, then compete in the ${COHORT.finalsName} on ${COHORT.finalsDate} for a ${PRIZES.totalPool} prize pool.`
+                  : `Top teams compete in the regional pitch competition for a ${PRIZES.totalPool} prize pool.`,
             },
           ].map((c, i) => (
             <Reveal key={c.title} delay={i * 0.06}>
@@ -280,9 +285,8 @@ export default async function CityPage({ params }: { params: Params }) {
             Ready to bring SparkLab to a {city.name} school?
           </h2>
           <p className="mt-5 text-lg text-[color:var(--color-fg-muted)]">
-            Tell us about your school — public, private, or charter — and
-            we&apos;ll plan a timeline that fits your calendar. We typically
-            respond within 2 business days.
+            Reach out and tell us about your school — public, private, or
+            charter. We typically respond within 2 business days.
           </p>
           <div className="mt-10">
             <ButtonLink href="/contact?interest=school" size="lg">

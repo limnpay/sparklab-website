@@ -9,27 +9,27 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { buildMetadata } from "@/lib/seo";
-import { PROGRAM, SITE } from "@/lib/constants";
+import { COHORT, PRIZES, PROGRAM, SITE } from "@/lib/constants";
 import Link from "next/link";
 import { ButtonLink } from "@/components/ui/Button";
 import { Section, SectionHeader } from "@/components/ui/Section";
 import { PageHero } from "@/components/ui/PageHero";
 import { Reveal } from "@/components/ui/Reveal";
 import { TrustStrip } from "@/components/sections/TrustStrip";
+import { SchoolRoster } from "@/components/sections/SchoolRoster";
 import { BreadcrumbsJsonLd } from "@/components/seo/JsonLd";
 import { CITIES } from "@/lib/cities";
 
 export const metadata = buildMetadata({
   title: "For Schools — Drop-In Entrepreneurship Program",
-  description: `Bring SparkLab to your school: a turnkey ${PROGRAM.weeks}-week entrepreneurship program with ${PROGRAM.videoModules} masterclass videos, teacher facilitation guides, and student workbooks. Designed for Michigan and Midwest high schools.`,
+  description: `Bring SparkLab to your school: a turnkey ${PROGRAM.weeks}-week entrepreneurship program with ${PROGRAM.videoModulesLabel} masterclass videos, a structured LMS, and teacher facilitation guides. Year 2 is underway at nine Macomb County high schools.`,
   path: "/schools",
   keywords: [
     "entrepreneurship program for schools",
     "high school business curriculum Michigan",
+    "Macomb County schools",
     "CTE program",
-    "Oakland County schools",
     "Detroit metro high school programs",
-    "Midwest career and technical education",
   ],
 });
 
@@ -58,7 +58,8 @@ const BENEFITS: Benefit[] = [
     description:
       "Everything teachers need to run a session — videos, lesson plans, workbooks, rubrics.",
     bullets: [
-      `${PROGRAM.videoModules} masterclass video modules`,
+      `${PROGRAM.videoModulesLabel} masterclass videos`,
+      `${PROGRAM.immersiveDays} immersive days, plus support behind the scenes`,
       "Weekly teacher facilitation guides",
       "Coordinated student workbooks",
     ],
@@ -91,7 +92,7 @@ const PROCESS = [
   {
     step: "Connect",
     description:
-      "Reach out and tell us about your school. We'll schedule a short call.",
+      "Reach out and tell us about your school.",
   },
   {
     step: "Plan",
@@ -128,7 +129,7 @@ export default function SchoolsPage() {
             <span className="text-gradient-spark">teachers</span> can run.
           </>
         }
-        description={`Drop-in ready: ${PROGRAM.weeks} weeks, ${PROGRAM.videoModules} masterclass videos, full facilitation guides, and a culminating pitch competition. Designed to fit a standard class period in any Michigan, Midwest, or Midwest-adjacent high school.`}
+        description={`Drop-in ready: ${PROGRAM.weeks} weeks, ${PROGRAM.videoModulesLabel} masterclass videos, a structured LMS, and ${PROGRAM.immersiveDays} immersive days. ${COHORT.label} is already running at nine Macomb County high schools. The same program can fit a class period at yours.`}
         imageSrc="/images/heroes/schools.jpg"
       >
         <ButtonLink href="/contact?interest=school" size="lg">
@@ -137,7 +138,23 @@ export default function SchoolsPage() {
         </ButtonLink>
       </PageHero>
 
-      <TrustStrip eyebrow="Partnering with schools across Michigan & the Midwest" />
+      <TrustStrip eyebrow={`${COHORT.label} is underway in Macomb County`} />
+
+      <Section ariaLabelledby="roster-heading">
+        <SectionHeader
+          eyebrow={`${COHORT.kickoff} kickoff`}
+          title={
+            <>
+              This year&apos;s{" "}
+              <span className="text-gradient-spark">partner schools.</span>
+            </>
+          }
+          description={`${COHORT.schoolCount} high schools across ${COHORT.districtCount} Macomb County districts. ${COHORT.finalistTeams} teams advance to the ${COHORT.finalsName} on ${COHORT.finalsDate}.`}
+        />
+        <div className="mt-12">
+          <SchoolRoster showTeams />
+        </div>
+      </Section>
 
       {/* BENEFITS */}
       <Section ariaLabelledby="benefits-heading">
@@ -204,7 +221,7 @@ export default function SchoolsPage() {
               {[
                 {
                   title: "Complete curriculum",
-                  body: `${PROGRAM.videoModules} masterclass videos + facilitation guides + student workbooks`,
+                  body: `${PROGRAM.videoModulesLabel} masterclass videos, a week-by-week LMS, facilitation guides, and student workbooks`,
                 },
                 {
                   title: "Mentor network",
@@ -212,15 +229,15 @@ export default function SchoolsPage() {
                 },
                 {
                   title: "Final pitch competition",
-                  body: "We help organize the in-person pitch event with industry judges",
+                  body: `A pitch at school in week 8, then the ${COHORT.finalsName} on ${COHORT.finalsDate}`,
                 },
                 {
                   title: "Prize pool",
-                  body: "Cash prizes for top teams, distributed directly to winning students",
+                  body: `${PRIZES.totalPool} for the top three teams at the county finals, paid directly to students`,
                 },
                 {
                   title: "Implementation support",
-                  body: "Direct line to the SparkLab team throughout the program",
+                  body: "We're with your school from the first session through the pitch",
                 },
               ].map((item) => (
                 <li key={item.title} className="flex items-start gap-4">
@@ -280,7 +297,7 @@ export default function SchoolsPage() {
               <span className="text-gradient-electric">{SITE.region}.</span>
             </>
           }
-          description={`SparkLab launched in the ${SITE.metroAreas[0]} and is actively expanding to ${SITE.secondaryRegions.join(", ")}. Pick your city below to see a tailored page — or reach out and we'll come to you.`}
+          description={`Green dots are communities where a 2026 partner school is in session. SparkLab is based in Birmingham and still expanding across ${SITE.region} and the Midwest. Don't see your city? Reach out.`}
         />
         <ul className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {CITIES.map((city) => (

@@ -12,7 +12,7 @@ import { BreadcrumbsJsonLd, JsonLd } from "@/components/seo/JsonLd";
 export const metadata = buildMetadata({
   title: "Blog — Notes on Youth Entrepreneurship Education",
   description:
-    "Practical writing from the SparkLab team on entrepreneurship education, pitch competitions, and bringing real business experience into Michigan high schools.",
+    "Practical writing from SparkLab on entrepreneurship education, pitch competitions, and bringing real business experience into Michigan high schools.",
   path: "/blog",
   keywords: [
     "youth entrepreneurship blog",
@@ -43,7 +43,7 @@ export default function BlogIndexPage() {
           url: `${SITE.url}/blog`,
           name: `${SITE.name} Blog`,
           description:
-            "Notes from the SparkLab team on entrepreneurship education and pitch competitions in Michigan high schools.",
+            "Notes from SparkLab on entrepreneurship education and pitch competitions in Michigan high schools.",
           publisher: { "@id": `${SITE.url}/#organization` },
           blogPost: posts.map((p) => ({
             "@type": "BlogPosting",

@@ -9,7 +9,7 @@ tags: ["schools", "michigan", "guide"]
 
 If you're a Michigan high school administrator or teacher who has decided your students would benefit from a real entrepreneurship program, the next question is logistics: how do you actually get one running?
 
-This is a short, practical playbook based on what we've seen work — and what we've watched stall — across our partner schools in Oakland County and the broader Detroit metro.
+This is a short, practical playbook based on what we've seen work — and what we've watched stall — across our partner schools in Macomb County and the broader Detroit metro.
 
 ## Step 1: Pick the slot before you pick the program
 

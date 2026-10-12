@@ -154,8 +154,7 @@ export default async function ContactPage({
                   <strong className="text-[color:var(--color-fg)]">
                     Schools:
                   </strong>{" "}
-                  pick "I represent a School" and tell us how to bring SparkLab
-                  to your campus. Every school starts on its own calendar.
+                  pick "I represent a School" and tell us about your campus.
                 </li>
                 <li>
                   <strong className="text-[color:var(--color-fg)]">

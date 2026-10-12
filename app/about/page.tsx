@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { ArrowRight, Target, Heart, Zap, Users } from "lucide-react";
 import { buildMetadata } from "@/lib/seo";
-import { SITE } from "@/lib/constants";
+import { COHORT, SITE } from "@/lib/constants";
 import { ButtonLink } from "@/components/ui/Button";
 import { Section, SectionHeader } from "@/components/ui/Section";
 import { PageHero } from "@/components/ui/PageHero";
@@ -208,8 +208,9 @@ export default function AboutPage() {
             Want to bring SparkLab to your school or community?
           </h2>
           <p className="mt-5 text-lg text-[color:var(--color-fg-muted)]">
-            We're actively expanding partner schools across Michigan and the
-            Midwest. Start the conversation — we read every message.
+            {COHORT.label} kicked off {COHORT.kickoff} at nine high schools
+            across Macomb County. We&apos;re still expanding across Michigan
+            and the Midwest. Start the conversation — we read every message.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-3 justify-center">
             <ButtonLink href="/program">

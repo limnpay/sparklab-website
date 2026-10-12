@@ -10,7 +10,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { buildMetadata } from "@/lib/seo";
-import { PRIZES, SITE } from "@/lib/constants";
+import { COHORT, PRIZES, PRIZES_2025, SITE } from "@/lib/constants";
 import { ButtonLink } from "@/components/ui/Button";
 import { Section, SectionHeader } from "@/components/ui/Section";
 import { PageHero } from "@/components/ui/PageHero";
@@ -18,18 +18,19 @@ import { Reveal } from "@/components/ui/Reveal";
 import { AmbientOrbs } from "@/components/effects/AmbientOrbs";
 import { Magnetic } from "@/components/effects/Magnetic";
 import { PrizePodium } from "@/components/sections/PrizePodium";
+import { SchoolRoster } from "@/components/sections/SchoolRoster";
 import { BreadcrumbsJsonLd, JsonLd } from "@/components/seo/JsonLd";
 
 export const metadata = buildMetadata({
   title: `Pitch Competition — ${PRIZES.totalPool} Prize Pool`,
-  description: `SparkLab culminates in an in-person pitch competition. ${PRIZES.totalPool} prize pool split between the top three teams, distributed directly to winning students.`,
+  description: `${COHORT.finalsName} is ${COHORT.finalsDate}. ${COHORT.finalistTeams} teams from nine Macomb County high schools compete for a ${PRIZES.totalPool} prize pool, paid directly to winning students.`,
   path: "/competition",
   keywords: [
     "high school pitch competition Michigan",
+    "Macomb County pitch competition",
     "student business competition",
     "youth entrepreneurship contest",
-    "Michigan startup competition",
-    "SparkLab competition winners",
+    "SparkLab competition",
   ],
 });
 
@@ -54,14 +55,14 @@ const HOW = [
   },
   {
     icon: Mic,
-    title: "Present to judges",
+    title: "Pitch at your school",
     description:
-      "Teams present their pitches in person to a panel of working entrepreneurs, investors, and operators.",
+      "Week 8 is the home-school pitch. Teams present to judges, answer questions, and support the other teams in the room.",
   },
   {
     icon: Trophy,
-    title: "Compete for prizes",
-    description: `The top three teams split a ${PRIZES.totalPool} prize pool — distributed directly to winning students.`,
+    title: "County finals",
+    description: `${COHORT.finalistTeams} teams advance to the ${COHORT.finalsName} on ${COHORT.finalsDate}. The top three split ${PRIZES.totalPool}, paid directly to students.`,
   },
 ] satisfies Step[];
 
@@ -118,7 +119,7 @@ export default function CompetitionPage() {
             <span className="text-gradient-spark">Win.</span>
           </>
         }
-        description={`The grand finale of every program. Student teams pitch real businesses to a panel of working entrepreneurs and investors, competing for a ${PRIZES.totalPool} prize pool.`}
+        description={`${COHORT.finalsName}, ${COHORT.finalsDate}. ${COHORT.finalistTeams} teams from ${COHORT.schoolCount} Macomb County high schools pitch to judges from market leaders for a ${PRIZES.totalPool} prize pool.`}
         imageSrc="/images/heroes/competition.jpg"
       >
         <ButtonLink href="/program">
@@ -160,7 +161,7 @@ export default function CompetitionPage() {
               <span className="text-gradient-electric">competition stage.</span>
             </>
           }
-          description="The pitch competition is the culmination of an 8-week program. Teams that complete the program are eligible to compete."
+          description={`Teams pitch at their home school in week 8. ${COHORT.finalistTeams} teams, representing ${COHORT.districtCount} Macomb County districts, advance to the county finals.`}
         />
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {HOW.map((s, i) => (
@@ -179,6 +180,23 @@ export default function CompetitionPage() {
               </article>
             </Reveal>
           ))}
+        </div>
+      </Section>
+
+      {/* FINALS FIELD */}
+      <Section ariaLabelledby="field-heading">
+        <SectionHeader
+          eyebrow={COHORT.finalsDate}
+          title={
+            <>
+              The finals{" "}
+              <span className="text-gradient-electric">field.</span>
+            </>
+          }
+          description={`${COHORT.finalistTeams} teams advance from these schools. Henry Ford II and Stevenson are both Utica Community Schools, so nine schools sit inside eight districts.`}
+        />
+        <div className="mt-12">
+          <SchoolRoster showTeams />
         </div>
       </Section>
 
@@ -219,7 +237,7 @@ export default function CompetitionPage() {
               <span className="text-gradient-spark">winners.</span>
             </>
           }
-          description="The 2025 SparkLab pitch competition. Three winning teams, all from our partner schools in Michigan."
+          description={`The December 15, 2025 SparkLab pitch competition. That year's prize pool was ${PRIZES_2025.totalPool}. The ${COHORT.year} finals award ${PRIZES.totalPool}.`}
         />
 
         <Reveal>
@@ -239,9 +257,9 @@ export default function CompetitionPage() {
 
         <div className="mt-14 grid gap-6 md:grid-cols-3 max-w-5xl mx-auto">
           {[
-            { place: PRIZES.first, src: "/images/winners/1st.jpg", accent: "spark" },
-            { place: PRIZES.second, src: "/images/winners/2nd.jpg", accent: "electric" },
-            { place: PRIZES.third, src: "/images/winners/3rd.jpg", accent: "muted" },
+            { place: PRIZES_2025.first, src: "/images/winners/1st.jpg", accent: "spark" },
+            { place: PRIZES_2025.second, src: "/images/winners/2nd.jpg", accent: "electric" },
+            { place: PRIZES_2025.third, src: "/images/winners/3rd.jpg", accent: "muted" },
           ].map((w, i) => (
             <Reveal key={w.place.label} delay={i * 0.08}>
               <figure className="card-elevated overflow-hidden bg-[color:var(--color-bg)]">
@@ -283,9 +301,10 @@ export default function CompetitionPage() {
             Want to compete?
           </h2>
           <p className="mt-5 text-lg text-[color:var(--color-fg-muted)]">
-            The pitch competition is open to teams who complete a SparkLab
-            program at their school. If your school doesn&apos;t offer it yet,
-            reach out and we&apos;ll help bring SparkLab there.
+            The {COHORT.finalsDate} finals are for teams advancing from the
+            nine Macomb County schools in {COHORT.label.toLowerCase()}. If your
+            school isn&apos;t on that list yet, reach out and we&apos;ll help
+            bring SparkLab there.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-3 justify-center">
             <Magnetic strength={0.25}>

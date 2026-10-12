@@ -4,6 +4,8 @@
  * (so Google can surface answers directly in search results).
  */
 
+import { COHORT, PRIZES } from "@/lib/constants";
+
 export type FaqCategory = {
   id: string;
   title: string;
@@ -27,11 +29,11 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
       },
       {
         q: "How are teams selected?",
-        a: "Teams are typically formed within each participating school, with 5 students per team. Your teachers will help organize teams based on interests and complementary skills.",
+        a: "Teams form inside each participating school, with 5 students per team. Teachers help match interests and complementary skills.",
       },
       {
         q: "Can my team really win cash prizes?",
-        a: "Yes. The top three teams in the final competition split a $15,000 prize pool: $7,500 for 1st, $5,000 for 2nd, and $2,500 for 3rd. Prize money is distributed directly to the winning team members.",
+        a: `Yes. At the ${COHORT.finalsName} on ${COHORT.finalsDate}, the top three teams split a ${PRIZES.totalPool} prize pool: ${PRIZES.first.amount} for 1st, ${PRIZES.second.amount} for 2nd, and ${PRIZES.third.amount} for 3rd. Prize money is distributed directly to the winning team members. The 2025 competition awarded a $15,000 pool.`,
       },
       {
         q: "What if my school doesn't offer SparkLab?",
@@ -62,11 +64,11 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
       },
       {
         q: "When does SparkLab start?",
-        a: "There is no shared start date. Every partner school launches SparkLab on its own calendar. Reach out to the SparkLab team and we'll plan a timeline that fits your semester.",
+        a: `${COHORT.label} kicked off ${COHORT.kickoff} at nine Macomb County high schools. Those students pitch at their home school in week 8, and ${COHORT.finalistTeams} teams advance to the ${COHORT.finalsName} on ${COHORT.finalsDate}. If your school wants SparkLab, reach out.`,
       },
       {
         q: "How do we bring SparkLab to our school?",
-        a: "Contact the SparkLab team through the form or email outreach@sparklabusa.com. Tell us about your school or district and we'll start the conversation. We don't run a public waitlist or reserve-a-spot process.",
+        a: "Reach out through the contact form or email outreach@sparklabusa.com. Tell us about your school or district.",
       },
       {
         q: "Can we customize the program?",

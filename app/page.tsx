@@ -11,11 +11,12 @@ import {
   Zap,
 } from "lucide-react";
 import { buildMetadata } from "@/lib/seo";
-import { PRIZES, PROGRAM, SITE, STATS } from "@/lib/constants";
+import { COHORT, PRIZES, PROGRAM, PROGRAM_ARC, SITE, STATS } from "@/lib/constants";
 import { ButtonLink } from "@/components/ui/Button";
 import { Section, SectionHeader } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
 import { TrustStrip } from "@/components/sections/TrustStrip";
+import { SchoolRoster } from "@/components/sections/SchoolRoster";
 import { PrizePodium } from "@/components/sections/PrizePodium";
 import { BreadcrumbsJsonLd, JsonLd } from "@/components/seo/JsonLd";
 import { SparkCanvas } from "@/components/effects/SparkCanvas";
@@ -27,16 +28,16 @@ import { Magnetic } from "@/components/effects/Magnetic";
 import { ScrollCue } from "@/components/effects/ScrollCue";
 
 export const metadata = buildMetadata({
-  title: "Youth Entrepreneurship Program in Birmingham, Michigan",
+  title: "Youth Entrepreneurship Program in Macomb County, Michigan",
   description:
-    "SparkLab is an 8-week entrepreneurship program where high school students in Michigan build real businesses, compete for cash prizes, and discover their potential.",
+    "SparkLab year 2 is an 8-week entrepreneurship program at nine Macomb County high schools. Students build real businesses and compete for a $40,000 prize pool on December 17, 2026.",
   path: "/",
   keywords: [
     "youth entrepreneurship program",
     "high school business program Michigan",
-    "Birmingham Michigan",
+    "Macomb County",
+    "Macomb County pitch competition",
     "Detroit metro student startup competition",
-    "Midwest pitch competition",
     "SparkLab",
   ],
 });
@@ -66,13 +67,6 @@ const GALLERY = [
   { src: "/images/gallery/02-mentor-collab.jpg", alt: "Students collaborating with an industry mentor during a SparkLab session" },
   { src: "/images/gallery/03-judges-evaluating.jpg", alt: "Industry judges evaluating SparkLab pitch presentations" },
   { src: "/images/gallery/04-lecture-hall.jpg", alt: "SparkLab teams presenting in a Michigan high school lecture hall" },
-];
-
-const WEEKS = [
-  { range: "Week 1–2", title: "Ideation & market research" },
-  { range: "Week 3–4", title: "Business model & strategy" },
-  { range: "Week 5–6", title: "Branding & marketing" },
-  { range: "Week 7–8", title: "Financials & pitch prep" },
 ];
 
 export default function HomePage() {
@@ -133,7 +127,7 @@ export default function HomePage() {
                     <span className="relative inline-flex h-2 w-2 rounded-full bg-[color:var(--color-electric)]" />
                   </span>
                   <span className="text-[color:var(--color-fg-muted)]">
-                    Birmingham, Michigan · Serving the Midwest
+                    {COHORT.label} · Macomb County · Finals {COHORT.finalsDate}
                   </span>
                 </div>
               </Reveal>
@@ -159,9 +153,10 @@ export default function HomePage() {
                 <p className="mt-8 max-w-xl text-lg sm:text-xl text-[color:var(--color-fg-muted)] leading-relaxed">
                   An immersive <strong className="text-[color:var(--color-fg)]">
                   {PROGRAM.weeks}-week entrepreneurship program</strong> where
-                  high school students in Michigan build a real business,
-                  work with industry mentors, and pitch for {PRIZES.totalPool}{" "}
-                  in cash prizes.
+                  high school students build a real business, work with
+                  industry mentors, and pitch for {PRIZES.totalPool} in cash
+                  prizes. {COHORT.label} kicked off {COHORT.kickoff} at nine
+                  Macomb County high schools.
                 </p>
               </Reveal>
 
@@ -218,14 +213,14 @@ export default function HomePage() {
                   Bring SparkLab to your campus
                 </h2>
                 <p className="mt-3 text-sm text-[color:var(--color-fg-muted)] leading-relaxed">
-                  Every school starts on its own calendar. Reach out to the
-                  SparkLab team and we&apos;ll plan a program that fits yours.
+                  {COHORT.label} is underway at nine Macomb County high schools.
+                  Want SparkLab at yours? Reach out.
                 </p>
                 <ul className="mt-6 space-y-2.5 text-sm text-[color:var(--color-fg-muted)]">
                   {[
-                    "Fits a regular class period",
+                    `Current cohort kicked off ${COHORT.kickoff}`,
                     "Teachers facilitate; we provide the curriculum",
-                    "Timing set with your school, not a public waitlist",
+                    `County finals ${COHORT.finalsDate}`,
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-2.5">
                       <CheckCircle2
@@ -242,7 +237,7 @@ export default function HomePage() {
                     data-cursor="cta"
                     className="inline-flex items-center gap-1.5 text-sm font-medium text-[color:var(--color-electric)] hover:gap-2 transition-all"
                   >
-                    Talk to the SparkLab team
+                    Reach out
                     <ArrowRight className="h-3.5 w-3.5" />
                   </Link>
                 </div>
@@ -426,34 +421,26 @@ export default function HomePage() {
             </h2>
             <p className="mt-5 text-lg text-[color:var(--color-fg-muted)]">
               <AnimatedNumber
-                value={`${PROGRAM.videoModules}`}
+                value={PROGRAM.videoModulesLabel}
                 className="text-[color:var(--color-spark)] font-bold"
               />{" "}
-              masterclass video modules, weekly facilitation guides, student
-              workbooks, and a final pitch competition — all designed to drop
-              into a standard semester schedule.
+              masterclass videos, a structured path through the eight weeks,
+              and a pitch at school — then county finals on {COHORT.finalsDate}.
             </p>
-            <ol className="mt-8 space-y-3">
-              {WEEKS.map((w, i) => (
-                <li key={w.range} className="flex items-center gap-4">
-                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[color:var(--color-spark)]/15 text-[color:var(--color-spark)] font-bold text-sm">
-                    {i + 1}
+            <ol className="mt-8 space-y-4">
+              {PROGRAM_ARC.map((step) => (
+                <li key={step.label} className="flex items-baseline gap-4">
+                  <span className="w-24 flex-shrink-0 text-sm font-semibold text-[color:var(--color-electric)]">
+                    {step.label}
                   </span>
-                  <span>
-                    <span className="text-sm font-semibold text-[color:var(--color-electric)]">
-                      {w.range}
-                    </span>
-                    <span className="ml-2 text-[color:var(--color-fg)]">
-                      {w.title}
-                    </span>
-                  </span>
+                  <span className="font-medium">{step.title}</span>
                 </li>
               ))}
             </ol>
             <div className="mt-10">
               <Magnetic strength={0.2}>
                 <ButtonLink href="/program" variant="outline">
-                  See the full curriculum
+                  See the program
                   <ArrowRight className="h-4 w-4" />
                 </ButtonLink>
               </Magnetic>
@@ -478,7 +465,7 @@ export default function HomePage() {
               </div>
               <div className="absolute -top-6 -right-6 rounded-2xl bg-[color:var(--color-bg-elevated)]/80 backdrop-blur-md border border-[color:var(--color-border-strong)] text-[color:var(--color-fg)] p-5 shadow-2xl">
                 <div className="text-3xl font-bold text-[color:var(--color-electric)] tabular-nums">
-                  <AnimatedNumber value={`${PROGRAM.videoModules}`} />
+                  <AnimatedNumber value={PROGRAM.videoModulesLabel} />
                 </div>
                 <div className="text-xs uppercase tracking-wider text-[color:var(--color-fg-muted)]">
                   Modules
@@ -509,7 +496,7 @@ export default function HomePage() {
               <span className="text-gradient-spark">Win.</span>
             </>
           }
-          description="SparkLab culminates in an in-person pitch competition where teams present to a panel of working entrepreneurs, investors, and operators. Top three teams win cash distributed directly to students."
+          description={`${COHORT.finalsName} is ${COHORT.finalsDate}. Twelve teams from nine Macomb County high schools pitch to judges from market leaders. The top three split ${PRIZES.totalPool}, paid directly to students.`}
         />
         <div className="mt-16">
           <PrizePodium />
@@ -517,47 +504,35 @@ export default function HomePage() {
         <div className="mt-14 text-center">
           <Magnetic strength={0.2}>
             <ButtonLink href="/competition" variant="outline">
-              See the 2025 winners
+              {COHORT.finalsName}
               <ArrowRight className="h-4 w-4" />
             </ButtonLink>
           </Magnetic>
         </div>
       </Section>
 
-      {/* ============ GEO REACH ============ */}
+      {/* ============ 2026 SCHOOLS ============ */}
       <Section ariaLabelledby="reach-heading">
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="eyebrow">Serving Michigan & the Midwest</p>
-          <h2
-            id="reach-heading"
-            className="mt-4 text-3xl md:text-5xl font-bold leading-tight"
-          >
-            Built in Birmingham. Open to schools across the region.
-          </h2>
-          <p className="mt-5 text-lg text-[color:var(--color-fg-muted)]">
-            SparkLab launched with schools in {SITE.metroAreas[0]} and is
-            actively expanding across {SITE.region}, {SITE.secondaryRegions.slice(0, -1).join(", ")}, and {SITE.secondaryRegions.slice(-1)[0]}.
-          </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-2">
-            {[SITE.region, ...SITE.secondaryRegions, ...SITE.metroAreas].map(
-              (r) => (
-                <span
-                  key={r}
-                  className="rounded-full border border-[color:var(--color-border-strong)] bg-[color:var(--color-bg-card)]/60 backdrop-blur px-3 py-1.5 text-xs text-[color:var(--color-fg-muted)]"
-                >
-                  {r}
-                </span>
-              )
-            )}
-          </div>
-          <div className="mt-10">
-            <Magnetic strength={0.25}>
-              <ButtonLink href="/contact?interest=school">
-                Bring SparkLab to your school
-                <ArrowRight className="h-4 w-4" />
-              </ButtonLink>
-            </Magnetic>
-          </div>
+        <SectionHeader
+          eyebrow={`${COHORT.label} · Macomb County`}
+          title={
+            <>
+              Nine high schools.{" "}
+              <span className="text-gradient-electric">One county finals.</span>
+            </>
+          }
+          description={`${COHORT.label} kicked off ${COHORT.kickoff}. Students pitch at their home school in week 8. ${COHORT.finalistTeams} teams advance to the ${COHORT.finalsName} on ${COHORT.finalsDate}.`}
+        />
+        <div className="mt-12">
+          <SchoolRoster showTeams />
+        </div>
+        <div className="mt-10 text-center">
+          <Magnetic strength={0.25}>
+            <ButtonLink href="/contact?interest=school">
+              Bring SparkLab to your school
+              <ArrowRight className="h-4 w-4" />
+            </ButtonLink>
+          </Magnetic>
         </div>
       </Section>
 

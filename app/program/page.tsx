@@ -8,7 +8,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { buildMetadata } from "@/lib/seo";
-import { PROGRAM, SITE } from "@/lib/constants";
+import { COHORT, GUEST_SPEAKERS, PROGRAM, PROGRAM_ARC, SITE } from "@/lib/constants";
 import { ButtonLink } from "@/components/ui/Button";
 import { Section, SectionHeader } from "@/components/ui/Section";
 import { PageHero } from "@/components/ui/PageHero";
@@ -16,8 +16,8 @@ import { Reveal } from "@/components/ui/Reveal";
 import { BreadcrumbsJsonLd, JsonLd } from "@/components/seo/JsonLd";
 
 export const metadata = buildMetadata({
-  title: "The Program — 8 Weeks, 42 Masterclass Modules",
-  description: `SparkLab's 8-week entrepreneurship curriculum: ${PROGRAM.videoModules} masterclass video modules, complete teacher facilitation guides, student workbooks, and a culminating pitch competition.`,
+  title: "The Program — 8 Weeks, 40+ Masterclass Videos",
+  description: `SparkLab's 8-week entrepreneurship curriculum: ${PROGRAM.videoModulesLabel} masterclass videos, a structured LMS, four immersive days, teacher facilitation guides, and a home-school pitch before the ${COHORT.finalsDate} county finals.`,
   path: "/program",
   keywords: [
     "entrepreneurship curriculum high school",
@@ -39,11 +39,11 @@ const DELIVERABLES: Deliverable[] = [
   {
     icon: Video,
     title: "Masterclass video series",
-    description: `${PROGRAM.videoModules} professionally produced video modules taught by successful entrepreneurs and industry experts in their field.`,
+    description: `${PROGRAM.videoModulesLabel} masterclass videos from industry experts and professionals, plus bonus sessions students can watch alongside the weekly work.`,
     bullets: [
       "Expert-led instruction",
       "Real-world case studies",
-      "Step-by-step guidance",
+      "Week-by-week guidance in the LMS",
       "Designed for in-class viewing",
     ],
   },
@@ -70,29 +70,6 @@ const DELIVERABLES: Deliverable[] = [
       "Teacher facilitation guides",
       "Assessment rubrics",
     ],
-  },
-];
-
-const WEEKS = [
-  {
-    range: "Weeks 1–2",
-    title: "Ideation & market research",
-    body: "Students identify a real problem worth solving, validate the audience, and study the competitive landscape.",
-  },
-  {
-    range: "Weeks 3–4",
-    title: "Business model & strategy",
-    body: "Teams design a revenue model, define their value proposition, and outline a go-to-market strategy.",
-  },
-  {
-    range: "Weeks 5–6",
-    title: "Branding & marketing",
-    body: "From naming to logos, voice, and channels — students build a complete brand identity and marketing plan.",
-  },
-  {
-    range: "Weeks 7–8",
-    title: "Financials & pitch prep",
-    body: "Projections, pricing, and the final pitch deck. Practice runs with mentors before the live competition.",
   },
 ];
 
@@ -124,7 +101,7 @@ export default function ProgramPage() {
           "@context": "https://schema.org",
           "@type": "Course",
           name: "SparkLab Youth Entrepreneurship Program",
-          description: `SparkLab's 8-week entrepreneurship program for high school students. ${PROGRAM.videoModules} masterclass video modules, weekly facilitation guides, student workbooks, and a culminating pitch competition.`,
+          description: `SparkLab's 8-week entrepreneurship program for high school students. ${PROGRAM.videoModulesLabel} masterclass videos, a structured LMS, ${PROGRAM.immersiveDays} immersive days, and a pitch at school before the county finals.`,
           provider: {
             "@id": `${SITE.url}/#organization`,
           },
@@ -164,7 +141,7 @@ export default function ProgramPage() {
             <span className="text-gradient-electric">best.</span>
           </>
         }
-        description={`A comprehensive entrepreneurship curriculum featuring ${PROGRAM.videoModules} expert-led masterclass videos, hands-on activities, and a culminating pitch competition. Program structure may be customized to meet specific school district requirements.`}
+        description={`Eight weeks, ${PROGRAM.videoModulesLabel} masterclass videos, a structured LMS, and ${PROGRAM.immersiveDays} immersive days. Week 8 is the pitch at your home school. ${COHORT.finalistTeams} teams then advance to the ${COHORT.finalsName} on ${COHORT.finalsDate}.`}
         imageSrc="/images/heroes/program.jpg"
       />
 
@@ -221,29 +198,57 @@ export default function ProgramPage() {
               <span className="text-gradient-electric">{PROGRAM.weeks} weeks.</span>
             </>
           }
-          description="Each week builds on the last. Students experience the full arc of starting a real business — research, design, build, pitch."
+          description="Eight weeks, from a first idea to a pitch at school. The lessons stay with the class. This is the shape of the journey."
         />
-        <ol className="mt-14 mx-auto max-w-4xl relative border-l-2 border-dashed border-[color:var(--color-border-strong)] pl-8 space-y-10">
-          {WEEKS.map((w, i) => (
-            <li key={w.range} className="relative">
-              <span
-                aria-hidden
-                className="absolute -left-[42px] top-1 inline-flex h-9 w-9 items-center justify-center rounded-full bg-[color:var(--color-spark)] text-white font-bold text-sm shadow-lg shadow-[color:var(--color-spark)]/30"
-              >
-                {i + 1}
-              </span>
-              <Reveal direction="left" delay={i * 0.05}>
-                <div className="text-sm font-semibold uppercase tracking-wider text-[color:var(--color-electric)]">
-                  {w.range}
-                </div>
-                <h3 className="mt-1 text-2xl font-bold">{w.title}</h3>
-                <p className="mt-2 text-[color:var(--color-fg-muted)] text-lg">
-                  {w.body}
-                </p>
+        <ol className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+          {PROGRAM_ARC.map((step, i) => (
+            <li key={step.label}>
+              <Reveal delay={i * 0.06}>
+                <article className="card-elevated h-full p-6 bg-[color:var(--color-bg)]">
+                  <div className="text-sm font-semibold uppercase tracking-wider text-[color:var(--color-electric)]">
+                    {step.label}
+                  </div>
+                  <h3 className="mt-3 text-2xl font-bold">{step.title}</h3>
+                  <p className="mt-3 text-[color:var(--color-fg-muted)]">
+                    {step.body}
+                  </p>
+                </article>
               </Reveal>
             </li>
           ))}
         </ol>
+      </Section>
+
+      {/* GUEST SPEAKERS */}
+      <Section ariaLabelledby="speaker-heading">
+        <SectionHeader
+          eyebrow="Guest speakers"
+          title={
+            <>
+              People who&apos;ve{" "}
+              <span className="text-gradient-spark">been in the room.</span>
+            </>
+          }
+          description="Each SparkLab event brings in someone who has built something of their own."
+        />
+        <ul className="mt-12 mx-auto grid max-w-3xl gap-4 sm:grid-cols-2">
+          {GUEST_SPEAKERS.map((speaker) => (
+            <li key={speaker.name}>
+              <article className="card-elevated h-full p-6">
+                <p className="text-sm font-semibold uppercase tracking-wider text-[color:var(--color-electric)]">
+                  {speaker.year}
+                </p>
+                <h3 className="mt-3 text-2xl font-bold">{speaker.name}</h3>
+                <p className="mt-1 text-sm font-medium text-[color:var(--color-fg-muted)]">
+                  {speaker.role}
+                </p>
+                <p className="mt-3 text-[color:var(--color-fg-muted)]">
+                  {speaker.bio}
+                </p>
+              </article>
+            </li>
+          ))}
+        </ul>
       </Section>
 
       {/* FEEDBACK LOOP */}

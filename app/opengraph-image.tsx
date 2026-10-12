@@ -105,7 +105,7 @@ export default function OgImage() {
             color: "rgba(226,226,226,0.7)",
           }}
         >
-          <span style={{ display: "flex" }}>Birmingham, Michigan · sparklabusa.com</span>
+          <span style={{ display: "flex" }}>Year 2 · Macomb County · sparklabusa.com</span>
           <span
             style={{
               padding: "12px 24px",

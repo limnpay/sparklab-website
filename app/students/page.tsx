@@ -10,7 +10,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { buildMetadata } from "@/lib/seo";
-import { PRIZES, PROGRAM } from "@/lib/constants";
+import { COHORT, PRIZES, PROGRAM } from "@/lib/constants";
 import { ButtonLink } from "@/components/ui/Button";
 import { Section, SectionHeader } from "@/components/ui/Section";
 import { PageHero } from "@/components/ui/PageHero";
@@ -90,7 +90,7 @@ export default function StudentsPage() {
             <span className="text-gradient-spark">you're capable of.</span>
           </>
         }
-        description={`Eight weeks. Five teammates. One real business. ${PROGRAM.videoModules} masterclass modules from working entrepreneurs, plus the chance to pitch for cash prizes.`}
+        description={`Eight weeks. Five teammates. One real business. ${PROGRAM.videoModulesLabel} masterclass videos, then a pitch at your school. ${COHORT.label} is underway at nine Macomb County high schools, with county finals on ${COHORT.finalsDate} for ${PRIZES.totalPool}.`}
         imageSrc="/images/heroes/students.jpg"
         imagePosition="top"
       >
@@ -208,7 +208,7 @@ export default function StudentsPage() {
               <Stat label="Weeks" value={`${PROGRAM.weeks}`} />
               <Stat label="Hours / week" value={PROGRAM.weeklyHours} />
               <Stat label="Team size" value={`${PROGRAM.teamSize}`} />
-              <Stat label="Modules" value={`${PROGRAM.videoModules}`} />
+              <Stat label="Videos" value={PROGRAM.videoModulesLabel} />
             </ul>
           </Reveal>
           <Reveal direction="right">
