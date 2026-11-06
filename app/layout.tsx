@@ -29,7 +29,7 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: `${SITE.name} | Youth Entrepreneurship Program in Michigan`,
+    default: SITE.homeTitle,
     template: `%s | ${SITE.name}`,
   },
   description: SITE.shortDescription,
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     siteName: SITE.name,
     locale: SITE.locale,
     url: SITE.url,
-    title: `${SITE.name} | Youth Entrepreneurship Program in Michigan`,
+    title: SITE.homeTitle,
     description: SITE.shortDescription,
     images: [
       {
@@ -83,7 +83,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${SITE.name} | Youth Entrepreneurship Program in Michigan`,
+    title: SITE.homeTitle,
     description: SITE.shortDescription,
     images: [SITE.defaultOgImage],
   },

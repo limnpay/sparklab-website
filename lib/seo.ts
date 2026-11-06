@@ -20,10 +20,9 @@ export function buildMetadata(seo: PageSEO): Metadata {
   const url = `${SITE.url}${seo.path}`;
   const image = seo.image ?? SITE.defaultOgImage;
   const absoluteImage = image.startsWith("http") ? image : `${SITE.url}${image}`;
-  const fullTitle =
-    seo.path === "/"
-      ? `${seo.title} | ${SITE.name}`
-      : `${seo.title} | ${SITE.name}`;
+  // Homepage passes SITE.homeTitle already (brand first, short enough to
+  // display). Other pages still get the brand appended.
+  const fullTitle = seo.path === "/" ? seo.title : `${seo.title} | ${SITE.name}`;
 
   return {
     metadataBase: new URL(SITE.url),

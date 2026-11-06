@@ -28,9 +28,9 @@ import { Magnetic } from "@/components/effects/Magnetic";
 import { ScrollCue } from "@/components/effects/ScrollCue";
 
 export const metadata = buildMetadata({
-  title: "Youth Entrepreneurship Program in Macomb County, Michigan",
+  title: SITE.homeTitle,
   description:
-    "SparkLab year 2 is an 8-week entrepreneurship program at nine Macomb County high schools. Students build real businesses and compete for a $40,000 prize pool on December 17, 2026.",
+    "SparkLab is a youth entrepreneurship program in Michigan. Year 2 is an 8-week program at nine Macomb County high schools. Students build real businesses and compete for a $40,000 prize pool on December 17, 2026.",
   path: "/",
   keywords: [
     "youth entrepreneurship program",
@@ -79,7 +79,7 @@ export default function HomePage() {
           "@type": "WebPage",
           "@id": `${SITE.url}/#webpage`,
           url: SITE.url,
-          name: `${SITE.name} — Youth Entrepreneurship Program in Michigan`,
+          name: SITE.homeTitle,
           isPartOf: { "@id": `${SITE.url}/#website` },
           about: { "@id": `${SITE.url}/#organization` },
           primaryImageOfPage: `${SITE.url}/images/heroes/home.jpg`,

@@ -6,6 +6,11 @@
 
 export const SITE = {
   name: "SparkLab",
+  /**
+   * Homepage <title>. Brand first, under 60 characters, so Google is likely
+   * to show it as-is on the "sparklab" query instead of rewriting it.
+   */
+  homeTitle: "SparkLab: Youth Entrepreneurship Program in Michigan",
   tagline: "Fuel the Spark. Find Your Light.",
   shortDescription:
     "An immersive 8-week entrepreneurship program where high school students build real businesses and compete for cash prizes. Year 2 is underway at nine Macomb County high schools, with county finals on December 17, 2026.",
